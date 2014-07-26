@@ -3,10 +3,10 @@
   <channel>
     <title>#define</title>
     <description>TODO: Write a description</description>
-    <link>http://0.0.0.0:4000/</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 26 Jul 2014 13:30:52 +0530</pubDate>
-    <lastBuildDate>Sat, 26 Jul 2014 13:30:52 +0530</lastBuildDate>
+    <link>http://abijith-kp.github.io/</link>
+    <atom:link href="http://abijith-kp.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 26 Jul 2014 13:49:59 +0530</pubDate>
+    <lastBuildDate>Sat, 26 Jul 2014 13:49:59 +0530</lastBuildDate>
     <generator>Jekyll v2.1.1</generator>
     
       <item>
@@ -49,8 +49,8 @@ executable are:&lt;/p&gt;
 &lt;p&gt;Its continuation can be read &lt;a href=&quot;/technology/2014/07/25/buffer-overflow-attack/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/2014/07/26/what-is-buffer-overflow-attack/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/what-is-buffer-overflow-attack/</guid>
+        <link>http://abijith-kp.github.io/2014/07/26/what-is-buffer-overflow-attack/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/2014/07/26/what-is-buffer-overflow-attack/</guid>
         
         
       </item>
@@ -84,8 +84,8 @@ same way as before. All the researches I had done was in vain. I couldn’t find
 At that point of time I used the first option, which easily solved my problem.&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/2014/07/26/lexyacc-in-arch-linux/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/lexyacc-in-arch-linux/</guid>
+        <link>http://abijith-kp.github.io/2014/07/26/lexyacc-in-arch-linux/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/2014/07/26/lexyacc-in-arch-linux/</guid>
         
         
       </item>
@@ -135,8 +135,8 @@ on this later.&lt;/p&gt;
 a correct answer, cannot be explained in words… :)&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/2014/07/26/jack-of-all-master-of-none/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/jack-of-all-master-of-none/</guid>
+        <link>http://abijith-kp.github.io/2014/07/26/jack-of-all-master-of-none/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/2014/07/26/jack-of-all-master-of-none/</guid>
         
         
       </item>
@@ -192,8 +192,8 @@ If you get an ERROR 403 while starting on port 80, it may be due to IIS that is 
 
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/2014/07/26/install-webgoat/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/install-webgoat/</guid>
+        <link>http://abijith-kp.github.io/2014/07/26/install-webgoat/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/2014/07/26/install-webgoat/</guid>
         
         
       </item>
@@ -355,8 +355,8 @@ some Cython code.&lt;/p&gt;
 &lt;p&gt;TODO: What is extended iterable unpacking??&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/technology/python/2014/07/26/how-to-use-cython-compiler/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/technology/python/2014/07/26/how-to-use-cython-compiler/</guid>
+        <link>http://abijith-kp.github.io/technology/python/2014/07/26/how-to-use-cython-compiler/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/technology/python/2014/07/26/how-to-use-cython-compiler/</guid>
         
         <category>python</category>
         
@@ -410,8 +410,8 @@ in those).&lt;/p&gt;
 &lt;p&gt;Just excited in participating in the final round… :)&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/2014/07/26/hacking-at-inctf/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/hacking-at-inctf/</guid>
+        <link>http://abijith-kp.github.io/2014/07/26/hacking-at-inctf/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/2014/07/26/hacking-at-inctf/</guid>
         
         
       </item>
@@ -450,8 +450,8 @@ Then remove gdm from the users list who can access the X Server. You can use the
 &lt;p&gt;Now just logout from your account and see that the background image has changed…. :)&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/2014/07/26/fedora-login-page/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/fedora-login-page/</guid>
+        <link>http://abijith-kp.github.io/2014/07/26/fedora-login-page/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/2014/07/26/fedora-login-page/</guid>
         
         
       </item>
@@ -466,8 +466,8 @@ the feelings that I had during those time when started to like programming and c
 &lt;p&gt;When the gods in my field are talking then there is nothing left to be said. Truly inspirational for any computer science student.&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/2014/07/26/computer-education/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/computer-education/</guid>
+        <link>http://abijith-kp.github.io/2014/07/26/computer-education/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/2014/07/26/computer-education/</guid>
         
         
       </item>
@@ -529,8 +529,8 @@ to them as well.&lt;/p&gt;
 &lt;p&gt;Anyway now I am hopping to be a part of future verions of InCTF and many other events of similar kind. :)&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/2014/07/26/at-the-finals/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/at-the-finals/</guid>
+        <link>http://abijith-kp.github.io/2014/07/26/at-the-finals/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/2014/07/26/at-the-finals/</guid>
         
         
       </item>
@@ -702,8 +702,8 @@ the input(instead of the command list for system function call)which would get
 executed in the stack.&lt;/p&gt;
 </description>
         <pubDate>Fri, 25 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/technology/2014/07/25/buffer-overflow-attack/</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/technology/2014/07/25/buffer-overflow-attack/</guid>
+        <link>http://abijith-kp.github.io/technology/2014/07/25/buffer-overflow-attack/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/technology/2014/07/25/buffer-overflow-attack/</guid>
         
         <category>security</category>
         
