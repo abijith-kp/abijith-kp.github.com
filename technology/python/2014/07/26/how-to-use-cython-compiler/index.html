@@ -138,9 +138,7 @@ Recorded running time for module imported from shared library:</p>
 
 <p>The running time has doubled after running using the cython generated code.</p>
 
-<h1 id="gcc--shared--fpic--os--i-usrincludepython27--o-sampleso-samplec--lpython27--lpthread--lm--lutil--ldl">$ gcc -shared -fPIC -Os -I /usr/include/python2.7 -o sample.so sample.c -lpython2.7 -lpthread -lm -lutil -ldl</h1>
-
-<p>Other flags like -lpthread, -Os, -lm, -lutil, -ldl are all optional.</p>
+<p>Other flags such as -lpthread, -Os, -lm, -lutil, -ldl can be used as optional as per your requirement.</p>
 
 <table>
   <thead>
@@ -155,16 +153,6 @@ Recorded running time for module imported from shared library:</p>
       <td>-Os</td>
       <td> </td>
       <td style="text-align: right">Optimize size</td>
-    </tr>
-    <tr>
-      <td>-I</td>
-      <td> </td>
-      <td style="text-align: right">Directories to check for header files</td>
-    </tr>
-    <tr>
-      <td>-o</td>
-      <td> </td>
-      <td style="text-align: right">Final output</td>
     </tr>
     <tr>
       <td>-lpython2.7</td>
@@ -194,47 +182,40 @@ Recorded running time for module imported from shared library:</p>
   </tbody>
 </table>
 
-<p>All the library dependency can be seen using ldd command
-    $ ldd sample</p>
+<p>All the library dependency can be seen using ldd command</p>
 
-<pre><code>  linux-vdso.so.1 (0x00007fff95ffe000)
-  libpython2.7.so.1.0 =&gt; /usr/lib/libpython2.7.so.1.0 (0x00007f64805e4000)
-  libpthread.so.0 =&gt; /usr/lib/libpthread.so.0 (0x00007f64803c6000)
-  libm.so.6 =so&gt; /usr/lib/libm.so.6 (0x00007f64800c2000)
-  libutil.so.1 =&gt; /usr/lib/libutil.so.1 (0x00007f647febf000)
-  libdl.so.2 =&gt; /usr/lib/libdl.so.2 (0x00007f647febf000007f647fcbb000)
-  libc.so.6 =&gt; /usr/lib/libc.so.6 (0x00007f647f90d000)
-  /lib64/ld-linux-x86-64.so.2 (0x00007f64809ad000)
-</code></pre>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>ldd sample
+  linux-vdso.so.1 <span class="o">(</span>0x00007fff95ffe000<span class="o">)</span>
+  libpython2.7.so.1.0 <span class="o">=</span>&gt; /usr/lib/libpython2.7.so.1.0 <span class="o">(</span>0x00007f64805e4000<span class="o">)</span>
+  libpthread.so.0 <span class="o">=</span>&gt; /usr/lib/libpthread.so.0 <span class="o">(</span>0x00007f64803c6000<span class="o">)</span>
+  libm.so.6 <span class="o">=</span>so&gt; /usr/lib/libm.so.6 <span class="o">(</span>0x00007f64800c2000<span class="o">)</span>
+  libutil.so.1 <span class="o">=</span>&gt; /usr/lib/libutil.so.1 <span class="o">(</span>0x00007f647febf000<span class="o">)</span>
+  libdl.so.2 <span class="o">=</span>&gt; /usr/lib/libdl.so.2 <span class="o">(</span>0x00007f647febf000007f647fcbb000<span class="o">)</span>
+  libc.so.6 <span class="o">=</span>&gt; /usr/lib/libc.so.6 <span class="o">(</span>0x00007f647f90d000<span class="o">)</span>
+  /lib64/ld-linux-x86-64.so.2 <span class="o">(</span>0x00007f64809ad000<span class="o">)</span></code></pre></div>
 
 <h2 id="faq">FAQ:</h2>
-<pre><code>Quest: Why do I get this import error?
-       "ImportError: ./sample.so: cannot dynamically load executable"
-  Ans: You are trying to import a file which is not a shared library. Use -shared flag along with gcc
+<p><em>Quest</em>: Why do I get this import error? “ImportError: ./sample.so: cannot dynamically load executable” <br />
+  <em>Ans</em>: You are trying to import a file which is not a shared library. Use -shared flag along with gcc</p>
 
-Quest: What is the error init function not defined?
-       "ImportError: dynamic module does not define init function (initsample_test)"
-  Ans: Names of the files, ie the shared library and both input codes(C and python/cython) has to be
-       same with only the extensions changed. --------------------------------------------------------------------------------------------------------------------
-</code></pre>
+<p><em>Quest</em>: What is the error init function not defined? “ImportError: dynamic module does not define init function (initsample_test)” <br />
+  <em>Ans</em>: Names of the files, ie the shared library and both input codes(C and python/cython) has to be
+         same with only the extensions changed.</p>
 
-<p>Interesting Links:</p>
+<h2 id="interesting-links">Interesting Links:</h2>
 
-<pre><code>[Stackoverflow] - A stackoverflow question similar to our 
-Linux Man pages
-Cython help
-http://www.behnel.de/cython200910/talk.html
-http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
-</code></pre>
+<p><a href="http://stackoverflow.com/questions/5105482/compile-main-python-program-using-cython">Stackoverflow</a> - A stackoverflow question similar to our topic.</p>
 
-<h1 id="todo">TODO</h1>
-<p>OK    &gt; Difference between CPython and Cython
-OK    &gt; Usage of sample executable(from above example) as modules
-OK    &gt; How to make a C-Extension python module</p>
+<p><a href="http://www.behnel.de/cython200910/talk.html">Presentation</a> by Benhel.</p>
 
-<pre><code>&gt; What is extended iterable unpacking??
-</code></pre>
+<p><a href="http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html">Tutorial</a> on shared libraries.</p>
 
+<p><strong>NOTE</strong>:</p>
+
+<p>This article do not contain on how to wite a Cython code. This <a href="link to cython tutorial">link</a> will help you learn
+some Cython code.</p>
+
+<p>TODO: What is extended iterable unpacking??</p>
 
   </article>
 

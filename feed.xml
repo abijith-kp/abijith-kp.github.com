@@ -5,9 +5,198 @@
     <description>TODO: Write a description</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 26 Jul 2014 09:41:57 +0530</pubDate>
-    <lastBuildDate>Sat, 26 Jul 2014 09:41:57 +0530</lastBuildDate>
+    <pubDate>Sat, 26 Jul 2014 13:30:52 +0530</pubDate>
+    <lastBuildDate>Sat, 26 Jul 2014 13:30:52 +0530</lastBuildDate>
     <generator>Jekyll v2.1.1</generator>
+    
+      <item>
+        <title>What is Buffer Overflow Attack</title>
+        <description>&lt;p&gt;Have anyone you heard the statement - &lt;em&gt;Water water everywhere. But not a drop to drink&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;You will understand this, if you start looking for a tutorial to learn about buffer overflow. Everyone of it would
+tell the same set of instructions, but nothing works. They all are missing out the main and important points. With
+this post I am trying to make up for that problem. Here I will be giving all the required background research about
+buffer overflow and the attack which uses this exploit.&lt;/p&gt;
+
+&lt;p&gt;When we pour more water into a glass, it overflows. The
+overflown water can really be a mess. The same thing happens in the case of a buffer overflow in a program also. When
+the size of the data to be stored is more than the size of the buffer allocated for the variable, the data is copied to
+the adjacent memory locations. By the way a buffer is a term given for the continues memory locations allocated for a
+variable. this overflow may lead to overwriting of the adjacent stack pointers such as ESP or EIP. This kind of overwriting
+of stack pointers can lead to serious problems like escalating ones privilege, or may be crashing the whole system. Even
+when people always talk about(me included :P) styles of programming and other related things but programmers are never
+taught or they think about SECURE CODDING which is equally important but ironically given the least importance(May only
+be true among beginners and intermediate people. This is since expert people works in production environment and its very
+crucial in that situation to follow security measures).&lt;/p&gt;
+
+&lt;p&gt;Buffer overflow attack mainly aims at those executable files which has a setuid bit enabled. This setuid bit gives the
+executable a property that it will inherit all the privileges of its owner rather than the user which runs the executable.
+So if somehow a shell is spawned while running this process the shell will run with the privileges of root user if the owner
+of the executable was root. Thus explicitly, the assumptions that we take while using the below mentioned attack on an
+executable are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Owner of the executable is root&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Setuid bit is enabled&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Next two main concepts that we have to give importance are NOP Sled and the payload script named as a shell script.&lt;/p&gt;
+
+&lt;p&gt;Its continuation can be read &lt;a href=&quot;/technology/2014/07/25/buffer-overflow-attack/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/2014/07/26/what-is-buffer-overflow-attack/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/what-is-buffer-overflow-attack/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Lex/YACC in Arch Linux</title>
+        <description>&lt;p&gt;In our sixth semester of B-Tech we have a course on Compiler Design. For that two tools are being used: Lex which is a
+lexical analyzer and Yacc is a parser generator. While compiling the code for the lexical analyzer created by lex and the
+code for parse created by yacc we require few libraries to include some important function templates into the code. the
+flags used along with gcc for this purpose are &lt;code&gt;-ll&lt;/code&gt; and  &lt;code&gt;-lfl&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;After installing Lex/Yacc in my Fedora system few months back, I got an error stating that definition for yywrap is not
+included. After searching for some time I got the solution for it.&lt;/p&gt;
+
+&lt;p&gt;There can be methods to solve it :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Just include the function yywrap in the lex file in the function definition part(third part of the code).Compiling can be
+done as &lt;code&gt;gcc lex.yy.c y.tab.c&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install &lt;strong&gt;flex-static&lt;/strong&gt; library to use the gcc flag -ll. After this just compile it like &lt;code&gt;gcc lex.yy.c y.tab.c -ll&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But later I changed to Arch Linux, after 1 year of using Fedora.&lt;/p&gt;
+
+&lt;p&gt;But in Arch when I tryed to compile the lex/yacc file initially the same problem arised. I thought I could solve it the
+same way as before. All the researches I had done was in vain. I couldn’t find a package similar to flex-static anywhere.
+At that point of time I used the first option, which easily solved my problem.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/2014/07/26/lexyacc-in-arch-linux/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/lexyacc-in-arch-linux/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Jack of all. Master of none.</title>
+        <description>&lt;p&gt;Starting from “ cout« “here” to echo “here”; “, I have tried to learn many programming languages. I think, I was
+just trying out different style of programming to know with which language was I more comfortable with. After this
+experiment there came another big problem…… I was not becoming proficient in any of them.&lt;/p&gt;
+
+&lt;p&gt;But I got opportunity to try out different types of programming techniques… procedural, object-oriented, functional
+and some combination of these. At times I have tried some assembly level programming also.&lt;/p&gt;
+
+&lt;p&gt;Just make a note that whenever I say “I always wanted to do …” dont misunderstand that I dont want to make those
+ideas work. But mostly it takes some time. We will talk about this topic later.&lt;/p&gt;
+
+&lt;p&gt;C++ was the first language that I studied. I always had a soft-corner for it. I remember, in my first class of
+programming when I was able to get the output without any error (most of the people were in the other group :P), I was
+so happy that I decided to write more programs of same type (pity on me…). At this point of time when I have
+realized the actual power of C++, I really wanted to know more about it. As we have started off with the Operating Systems
+courses at the college I got an opportunity to learn more about it, as well as the internals of Linux OS. I wish to
+know more about using sql database in a C++ program.&lt;/p&gt;
+
+&lt;p&gt;In college, once I had gone for a python workshop, the person who came to take classes was so good and he was able to give
+all of us, a good idea of the language and what it is all about. It took me more time to start writing programs in it. Before,
+to get more acquainted with the language I first wrote a program in C++ then converted it to python. It is very easy to work
+with and is a good language to start off studying programming languages at schools. Now a days I am was trying to make a
+program using python and glade.&lt;/p&gt;
+
+&lt;p&gt;Till the second year of my collage I never understood the difference between functional programming and procedural programming.
+Since our curriculum had changed that year and the teaching of this language(Scheme) had just started, even the teachers
+were not able to teach us anything. We studied everything from scratch. It was a very hard time till we wrote our first program.
+Later when we got adjusted to the system, then it became a piece of cake. Just after that semester while I was talking to a
+friend of mine who was working at Yahoo,then only I was enlightened with the fact that functional programming is widely used in
+the field of artificial intelligence and many other fields.&lt;/p&gt;
+
+&lt;p&gt;During my last vacations I have started to work on php-mysql programming. Its very good to know how the Internet and websites
+work and I wanted to make some contributions to it myself. I have started to design a website, an online e-book library.
+All the registered members will be given privileges to upload new books, tag them and make changes to it. There will also be
+some people who will work as a censorship team which keeps an eye on all the uploaded content. Shortly I will be putting the source code for this website too.&lt;/p&gt;
+
+&lt;p&gt;Same time in which I was working in php I had a glimpse of how to program in android also. I have started to develop an
+application which can be used to track a person using a GPS system. I have to work more on this topic. Will be writing more
+on this later.&lt;/p&gt;
+
+&lt;p&gt;I have always felt great while programming anything, because the joy that you get after the program is executed and we get
+a correct answer, cannot be explained in words… :)&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/2014/07/26/jack-of-all-master-of-none/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/jack-of-all-master-of-none/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Install WebGoat</title>
+        <description>&lt;p&gt;Today as a part of my Computer Scurity course I had to install &lt;a href=&quot;https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project&quot;&gt;WebGoat&lt;/a&gt;,
+which is platform for learning how to exploit vulnarabilities in web applications. It could be of great help in learning
+secure programming practices. It work on top of Java and Tomcat server. As I started the installation I had to face many
+problems associated with it. Mainly with the versions of JDK and JRE used. I had lost almost half a to solve this problem.
+So I thought I could share my experience if it could help someone to install WebGoat.&lt;/p&gt;
+
+&lt;p&gt;I downloaded WebGoat v5.2 from &lt;a href=&quot;http://sourceforge.net/projects/owasp/files/WebGoat/WebGoat%205.2/&quot;&gt;Sourceforge&lt;/a&gt;. Along
+with the WebGoat-OWASP_Standard-5.2.zip, we also require WebGoat-5.2.war file. Unzip the WebGoat zip file to your curent
+directory.Change into the new unzipped directory. Then remove all the files name webgoat in &lt;code&gt;./tomcat/webapp/&lt;/code&gt; and place
+the downloaded war file in this directory.&lt;/p&gt;
+
+&lt;p&gt;Find out the versions of jre and jdk installed in your system using:  &lt;code&gt;java  -version&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Also find the vakue for the environmental value JAVA_HOME:  &lt;code&gt;echo $JAVA_HOME&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Open the webgoat.sh file from the root folder. In the function &lt;code&gt;is_java_1dot6&lt;/code&gt; change all the &lt;code&gt;1.6&lt;/code&gt; to the your current
+version.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;java -version
+java version &lt;span class=&quot;s2&quot;&gt;&amp;quot;1.7.0_21&amp;quot;&lt;/span&gt;
+OpenJDK Runtime Environment &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;IcedTea 2.3.9&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ArchLinux build 7.u21_2.3.9-4-x86_64&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+OpenJDK 64-Bit Server VM &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;build 23.7-b01, mixed mode&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;
+/usr/lib/jvm/java-7-openjdk&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here java version is shown as 1.7.0_21. Therefore you can replace the older version number given in the shell script to the
+new version number &lt;code&gt;1.7&lt;/code&gt;.You have to add below given two lines to the shell script:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/lib/jvm/java-7-openjdk
+&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt;  JAVA_HOME&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now start the tomcat server.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sh webgoat.sh start80      # works on default port of 80&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;OR&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sh webgoat.sh start8080    &lt;span class=&quot;c&quot;&gt;# works on port 8080&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Go to http://127.0.0.1/webgoat/attack OR http://127.0.0.1:8080/webgoat/attack in any browser to start using WebGoat interface.
+If you get an ERROR 403 while starting on port 80, it may be due to IIS that is using that port.&lt;/p&gt;
+
+&lt;p&gt;And if it is ERROR 404, check the url you typped on the browser.&lt;/p&gt;
+
+&lt;p&gt;I suppose I have included most of the thing that I have done. Hope this helps. :)&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/2014/07/26/install-webgoat/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/install-webgoat/</guid>
+        
+        
+      </item>
     
       <item>
         <title>How to use Cython compiler??</title>
@@ -86,9 +275,7 @@ Recorded running time for module imported from shared library:&lt;/p&gt;
 
 &lt;p&gt;The running time has doubled after running using the cython generated code.&lt;/p&gt;
 
-&lt;h1 id=&quot;gcc--shared--fpic--os--i-usrincludepython27--o-sampleso-samplec--lpython27--lpthread--lm--lutil--ldl&quot;&gt;$ gcc -shared -fPIC -Os -I /usr/include/python2.7 -o sample.so sample.c -lpython2.7 -lpthread -lm -lutil -ldl&lt;/h1&gt;
-
-&lt;p&gt;Other flags like -lpthread, -Os, -lm, -lutil, -ldl are all optional.&lt;/p&gt;
+&lt;p&gt;Other flags such as -lpthread, -Os, -lm, -lutil, -ldl can be used as optional as per your requirement.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -103,16 +290,6 @@ Recorded running time for module imported from shared library:&lt;/p&gt;
       &lt;td&gt;-Os&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: right&quot;&gt;Optimize size&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-I&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;Directories to check for header files&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-o&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;Final output&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;-lpython2.7&lt;/td&gt;
@@ -142,47 +319,40 @@ Recorded running time for module imported from shared library:&lt;/p&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;All the library dependency can be seen using ldd command
-    $ ldd sample&lt;/p&gt;
+&lt;p&gt;All the library dependency can be seen using ldd command&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  linux-vdso.so.1 (0x00007fff95ffe000)
-  libpython2.7.so.1.0 =&amp;gt; /usr/lib/libpython2.7.so.1.0 (0x00007f64805e4000)
-  libpthread.so.0 =&amp;gt; /usr/lib/libpthread.so.0 (0x00007f64803c6000)
-  libm.so.6 =so&amp;gt; /usr/lib/libm.so.6 (0x00007f64800c2000)
-  libutil.so.1 =&amp;gt; /usr/lib/libutil.so.1 (0x00007f647febf000)
-  libdl.so.2 =&amp;gt; /usr/lib/libdl.so.2 (0x00007f647febf000007f647fcbb000)
-  libc.so.6 =&amp;gt; /usr/lib/libc.so.6 (0x00007f647f90d000)
-  /lib64/ld-linux-x86-64.so.2 (0x00007f64809ad000)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ldd sample
+  linux-vdso.so.1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0x00007fff95ffe000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  libpython2.7.so.1.0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; /usr/lib/libpython2.7.so.1.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0x00007f64805e4000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  libpthread.so.0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; /usr/lib/libpthread.so.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0x00007f64803c6000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  libm.so.6 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;so&amp;gt; /usr/lib/libm.so.6 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0x00007f64800c2000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  libutil.so.1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; /usr/lib/libutil.so.1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0x00007f647febf000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  libdl.so.2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; /usr/lib/libdl.so.2 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0x00007f647febf000007f647fcbb000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  libc.so.6 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; /usr/lib/libc.so.6 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0x00007f647f90d000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  /lib64/ld-linux-x86-64.so.2 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0x00007f64809ad000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;faq&quot;&gt;FAQ:&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;Quest: Why do I get this import error?
-       &quot;ImportError: ./sample.so: cannot dynamically load executable&quot;
-  Ans: You are trying to import a file which is not a shared library. Use -shared flag along with gcc
+&lt;p&gt;&lt;em&gt;Quest&lt;/em&gt;: Why do I get this import error? “ImportError: ./sample.so: cannot dynamically load executable” &lt;br /&gt;
+  &lt;em&gt;Ans&lt;/em&gt;: You are trying to import a file which is not a shared library. Use -shared flag along with gcc&lt;/p&gt;
 
-Quest: What is the error init function not defined?
-       &quot;ImportError: dynamic module does not define init function (initsample_test)&quot;
-  Ans: Names of the files, ie the shared library and both input codes(C and python/cython) has to be
-       same with only the extensions changed. --------------------------------------------------------------------------------------------------------------------
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Quest&lt;/em&gt;: What is the error init function not defined? “ImportError: dynamic module does not define init function (initsample_test)” &lt;br /&gt;
+  &lt;em&gt;Ans&lt;/em&gt;: Names of the files, ie the shared library and both input codes(C and python/cython) has to be
+         same with only the extensions changed.&lt;/p&gt;
 
-&lt;p&gt;Interesting Links:&lt;/p&gt;
+&lt;h2 id=&quot;interesting-links&quot;&gt;Interesting Links:&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;[Stackoverflow] - A stackoverflow question similar to our 
-Linux Man pages
-Cython help
-http://www.behnel.de/cython200910/talk.html
-http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/5105482/compile-main-python-program-using-cython&quot;&gt;Stackoverflow&lt;/a&gt; - A stackoverflow question similar to our topic.&lt;/p&gt;
 
-&lt;h1 id=&quot;todo&quot;&gt;TODO&lt;/h1&gt;
-&lt;p&gt;OK    &amp;gt; Difference between CPython and Cython
-OK    &amp;gt; Usage of sample executable(from above example) as modules
-OK    &amp;gt; How to make a C-Extension python module&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.behnel.de/cython200910/talk.html&quot;&gt;Presentation&lt;/a&gt; by Benhel.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; What is extended iterable unpacking??
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html&quot;&gt;Tutorial&lt;/a&gt; on shared libraries.&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;This article do not contain on how to wite a Cython code. This &lt;a href=&quot;link to cython tutorial&quot;&gt;link&lt;/a&gt; will help you learn
+some Cython code.&lt;/p&gt;
+
+&lt;p&gt;TODO: What is extended iterable unpacking??&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
         <link>http://0.0.0.0:4000/technology/python/2014/07/26/how-to-use-cython-compiler/</link>
@@ -198,6 +368,170 @@ OK    &amp;gt; How to make a C-Extension python module&lt;/p&gt;
         <category>technology</category>
         
         <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>Hacking at InCTF</title>
+        <description>&lt;p&gt;Usually I just skim through my NITC mail, and checks only those send by my Class Representative or teachers. One day I
+read a mail forwarded by one of my seniors &lt;a href=&quot;http://k4rtik.wordpress.com&quot;&gt;Kartik&lt;/a&gt;. It was about a hacking competition
+conducted by Amruta University called &lt;a href=&quot;www.inctf.in&quot;&gt;InCTF&lt;/a&gt; which had 2 preliminary rounds and a final round. It was a
+Capture The Flag kind of competition. At that time I wasn’t in the mood of doing anything as I had to complete my lab
+assignments (which I was in a bad situation) and also if by any chance I got selected, the second round will be at the time
+of our exams so I ignored it. Later when I was searching for some thing I again came across this competition. This was the
+first time that this kind of an event comes into my notice(It was pretty interesting one… One that I know I will surely
+enjoy.. :)). Then I called one of my friend to tell him about this. I couldn’t make any decision then as I wanted to put my
+leg on both the boats - do it and not do it. He was very much excited to do the event. So we decided to meet one of senior
+for getting the details of the event.&lt;/p&gt;
+
+&lt;p&gt;Oh….I forgot to tell, last year(2012) for sCTF, a variant of InCTF, the first prize was bagged by our college team
+consisting a team of our seniors.&lt;/p&gt;
+
+&lt;p&gt;Jerin told us many things : How they prepared, how they participated in the event, about the event format. He also gave us tips
+on how to attack the questions and also told us the techniques they used in the final CTF round.  We collected their last
+year’s question paper also. He was very supportive in all ways.&lt;/p&gt;
+
+&lt;p&gt;Till date two round of InCTF is completed. First round was a “learning round”. They gave us something like 2-3 months to
+learn few concepts and complete a question paper. The second round was a hands-on hacking round. It had different varieties of
+questions and most of which were of very high quality. Thanks to the support of all my friends our team “d3c0dr” got selected
+into the final round. We finished at 24th position out of 158 teams registered and the end of second round.&lt;/p&gt;
+
+&lt;p&gt;It was really great experience in participating in the event. The main thing I have to mention is that I learned few methods
+and techniques during this event. We also had to stay overnight in our lab during the second round, those were great. Those
+are the points in your life were you start thinking philosophically and talk like a philosopher. The main reason is that at
+some point we may be half asleep and wanted to answer to all the questions asked to you. These will be few moments that I will
+forever keep in my memories.&lt;/p&gt;
+
+&lt;p&gt;The more interesting part was that the second round was overlapping our exam time. So we had to it in between the exams. For
+my last exam I couldn’t even prepare much because I was very much involved in this. After I came back to my room I had a mild
+fewer also. Everything happened was indicating that I shouldn’t write my exams well(Omen kind of, just saying - I don’t believe
+in those).&lt;/p&gt;
+
+&lt;p&gt;Just excited in participating in the final round… :)&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/2014/07/26/hacking-at-inctf/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/hacking-at-inctf/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Fedora login page</title>
+        <description>&lt;p&gt;I have been trying to change the image in the log-in page of my Fedora system for a long time now. I always felt that it
+was a very dull one and wanted to something very interesting there, it can give you a very good first impression. At last
+i have found the way…&lt;/p&gt;
+
+&lt;p&gt;There is actually not much work in setting up this…&lt;/p&gt;
+
+&lt;p&gt;First what you have to do is to copy the image that you require to put in the background to the directory /var/lib/gdm. You
+will be requiring the root access to copy to the final destination.There could be a problem with ownership of the file after
+you copy it. So change both the group and user of the image as gdm.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo cp  /from/required/path/image.jpg  /var/lib/gdm/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;next change the ownership of the file&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown gdm:gdm /var/lib/gdm/image.jpg&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next you have to add the user “gdm” to the list of all users who can access the X Server of your system. For that you can:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;xhost +SI:localuser:gdm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then start the gnome control center to cahnge the background as gdm as the user.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo -u gdm dbus-launch gnome-control-center&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Select the background option. Then select the image from the home folder of the user gdm. Close the gnome-control-center.
+Then remove gdm from the users list who can access the X Server. You can use the following command for that:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;xhost -SI:localuser:gdm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now just logout from your account and see that the background image has changed…. :)&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/2014/07/26/fedora-login-page/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/fedora-login-page/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Computer Education</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://youtu.be/nKIu9yen5nc&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;With this post I am not trying to publicize any person or any products. But its just because, this video could convey
+the feelings that I had during those time when started to like programming and computer.&lt;/p&gt;
+
+&lt;p&gt;When the gods in my field are talking then there is nothing left to be said. Truly inspirational for any computer science student.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/2014/07/26/computer-education/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/computer-education/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>At the Finals</title>
+        <description>&lt;p&gt;I will continue with what happened after &lt;a href=&quot;/2014/07/26/hacking-at-inctf/&quot;&gt;this&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When the organizers of the event called us for announcing the winners, they requested that one person from each team to talk
+about our experience at &lt;a href=&quot;www.inctf.in&quot;&gt;InCTF&lt;/a&gt;. I was the person who went from my team. Actually I had many thing to say but
+when I got there I didn’t talk much. Out of 11-13 teams participated we were able to make it to the fifth position. The first
+thought that came to me when I write this post is that this event had given me a good experience in a totally different field
+which altogether changed my interests.&lt;/p&gt;
+
+&lt;p&gt;Final round of InCTF was conducted at Amrita College, Amritapuri Campus for two days, on June 1, June 2.  First of all it was
+a great experience reaching there. I took the tickets and was waiting for my friends in front of the train. But they got into
+the train before calling me and the train started. When the train was at a distance that I could not catch I called them up and
+said that I didn’t get and made them jump back to the platform :P. Then we had to catch a bus to Kayamkulam and we reached very late, on the last bus to the college.&lt;/p&gt;
+
+&lt;p&gt;Next day was a practice session where we were given a vulnerable Ubuntu image. First we had to bypass the login and change the
+root password. As we were newbies in this area we were only able to bypass this login. But inside we had to start few custom
+made services and exploit its vulnerabilities. There were three services that we had to start. The source code of the vulnerable
+services were also provided. It would basically be written in either of &lt;a href=&quot;tag list&quot;&gt;Python&lt;/a&gt;, &lt;a href=&quot;tag list&quot;&gt;C&lt;/a&gt;, and &lt;a href=&quot;tag list&quot;&gt;C++&lt;/a&gt;.
+We could actually understand what will be the work flow of the program. But even with our basic understanding that we should
+use a &lt;a href=&quot;link to post&quot;&gt;buffer-overflow attack&lt;/a&gt; to retrieve whatever data we need, we could not put that into practice. This was
+when I really felt that our seniors could have helped us a bit more. I don’t want to put blame on them because they were the
+people who intimated us that there is a competition like this is being conducted. I am really thankful to them for it.&lt;/p&gt;
+
+&lt;p&gt;After the first round we three team members did run behind the organizers to give give us some tips on how and what to do.
+They were very helpful and gave us tips on how to crack this competition. I think we utilized all the chance that we got to
+talk to the organizers especially &lt;a href=&quot;http://bithin.blogspot.in/&quot;&gt;Bithin&lt;/a&gt;, &lt;a href=&quot;http://seshagiriprabhu.wordpress.com&quot;&gt;Seshagiri Prabhu&lt;/a&gt;,
+&lt;a href=&quot;http://arvindsraj.wordpress.com/&quot;&gt;Aravind S Raj&lt;/a&gt;. More than the competition we had a friendly conversation and exchanged our
+views on various topics not like professionals but as people who want to learn new things.&lt;/p&gt;
+
+&lt;p&gt;That night we decided that we read some related materials. But the the situation was against us. No range to get Internet
+connection… tiredness due to travel… everything came together :(. Even then we sat for some time just talking on what
+to do the next day. From the inspiration from our seniors and the fact that they were the winners last time, we were looking
+forward to doing a good performance at the event.&lt;/p&gt;
+
+&lt;p&gt;On the second day when we started there was only one method that was in our mind to get a remote connection, SSH. But the irony
+was that we could not use it as the password was reset at the beginning. It may be that we did not have knowledge on how
+bypass it. Initially nobody did get any points. But later one started to score. After sometime we got a different method of
+attack and we were able to use it effectively. From what my seniors have told, automating the task could fetch us more points.
+So we automated the task. With this we were in the top three for about half of the event.&lt;/p&gt;
+
+&lt;p&gt;But everything reversed within a few minutes…. Some guy used the vulnerability in the service to inject &lt;code&gt;rm -rf&lt;/code&gt; command to
+the root directory of the service. By the time we solved this issue by copying files from the backup we had… we lost many
+points for lagging behind and we came down the scoreboard. Even then we were confident that we could make it to the top by the
+end of the day. Again problem came in. We could not make the script run correctly. The original one was not backed-up. Solving
+this issue was like a NP-Hard problem for us at that time. By the time we figured out few new methods time was finished and we
+had to wind the event. We had to satisfy with fifth position in the event. This was decided on the basis of our performance in
+both second and the final round.&lt;/p&gt;
+
+&lt;p&gt;Even though we could not win the competition, it was a great learning opportunity and a chance to meet many new people. I
+would like to recommend students or people who are interested in security field to attend this kind of CTF competitions.
+This could give you a exposure to different kind of techniques and methods that other experts use. And an opportunity to talk
+to them as well.&lt;/p&gt;
+
+&lt;p&gt;Anyway now I am hopping to be a part of future verions of InCTF and many other events of similar kind. :)&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/2014/07/26/at-the-finals/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/07/26/at-the-finals/</guid>
+        
         
       </item>
     
