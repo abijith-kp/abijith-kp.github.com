@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>#define</title>
+    <title>Install WebGoat</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="TODO: Write a description">
-    <link rel="canonical" href="http://abijith-kp.github.io/">
+    <link rel="canonical" href="http://abijith-kp.github.io/technology/how-to/2013/07/28/install-webgoat/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -57,44 +57,65 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Recent Posts</h1>
+  <header class="post-header">
+    <h1>Install WebGoat</h1>
+    <p class="meta">Jul 28, 2013</p>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">Jul 26, 2014</span>
-        <a class="post-link" href="/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/">How to use Cython compiler??</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jun 6, 2014</span>
-        <a class="post-link" href="/technology/2014/06/06/buffer-overflow-attack/">Buffer Overflow Attack</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jan 24, 2014</span>
-        <a class="post-link" href="/technology/2014/01/24/what-is-buffer-overflow-attack/">What is Buffer Overflow Attack</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Sep 10, 2013</span>
-        <a class="post-link" href="/experience/2013/09/10/at-the-finals/">At the Finals</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jul 28, 2013</span>
-        <a class="post-link" href="/technology/how-to/2013/07/28/install-webgoat/">Install WebGoat</a>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+  <p>Today as a part of my Computer Scurity course I had to install <a href="https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project">WebGoat</a>,
+which is platform for learning how to exploit vulnarabilities in web applications. It could be of great help in learning
+secure programming practices. It work on top of Java and Tomcat server. As I started the installation I had to face many
+problems associated with it. Mainly with the versions of JDK and JRE used. I had lost almost half a to solve this problem.
+So I thought I could share my experience if it could help someone to install WebGoat.</p>
 
-  <p><a href="/posts.html">Other Posts</a></p>
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>I downloaded WebGoat v5.2 from <a href="http://sourceforge.net/projects/owasp/files/WebGoat/WebGoat%205.2/">Sourceforge</a>. Along
+with the WebGoat-OWASP_Standard-5.2.zip, we also require WebGoat-5.2.war file. Unzip the WebGoat zip file to your curent
+directory.Change into the new unzipped directory. Then remove all the files name webgoat in <code>./tomcat/webapp/</code> and place
+the downloaded war file in this directory.</p>
+
+<p>Find out the versions of jre and jdk installed in your system using:  <code>java  -version</code></p>
+
+<p>Also find the vakue for the environmental value JAVA_HOME:  <code>echo $JAVA_HOME</code></p>
+
+<p>Open the webgoat.sh file from the root folder. In the function <code>is_java_1dot6</code> change all the <code>1.6</code> to the your current
+version.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>java -version
+java version <span class="s2">&quot;1.7.0_21&quot;</span>
+OpenJDK Runtime Environment <span class="o">(</span>IcedTea 2.3.9<span class="o">)</span> <span class="o">(</span>ArchLinux build 7.u21_2.3.9-4-x86_64<span class="o">)</span>
+OpenJDK 64-Bit Server VM <span class="o">(</span>build 23.7-b01, mixed mode<span class="o">)</span>
+
+<span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$JAVA_HOME</span>
+/usr/lib/jvm/java-7-openjdk</code></pre></div>
+
+<p>Here java version is shown as 1.7.0_21. Therefore you can replace the older version number given in the shell script to the
+new version number <code>1.7</code>.You have to add below given two lines to the shell script:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/java-7-openjdk
+<span class="nb">export</span>  JAVA_HOME</code></pre></div>
+
+<p>Now start the tomcat server.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sh webgoat.sh start80      # works on default port of 80</code></pre></div>
+
+<p>OR</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sh webgoat.sh start8080    <span class="c"># works on port 8080</span></code></pre></div>
+
+<p>Go to http://127.0.0.1/webgoat/attack OR http://127.0.0.1:8080/webgoat/attack in any browser to start using WebGoat interface.
+If you get an ERROR 403 while starting on port 80, it may be due to IIS that is using that port.</p>
+
+<p>And if it is ERROR 404, check the url you typped on the browser.</p>
+
+<p>I suppose I have included most of the thing that I have done. Hope this helps. :)</p>
+
+
+  </article>
 
 </div>
-
       </div>
     </div>
 

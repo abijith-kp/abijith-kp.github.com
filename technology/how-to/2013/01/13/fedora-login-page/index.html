@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>#define</title>
+    <title>Fedora login page</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="TODO: Write a description">
-    <link rel="canonical" href="http://abijith-kp.github.io/">
+    <link rel="canonical" href="http://abijith-kp.github.io/technology/how-to/2013/01/13/fedora-login-page/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -57,44 +57,48 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Recent Posts</h1>
+  <header class="post-header">
+    <h1>Fedora login page</h1>
+    <p class="meta">Jan 13, 2013</p>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">Jul 26, 2014</span>
-        <a class="post-link" href="/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/">How to use Cython compiler??</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jun 6, 2014</span>
-        <a class="post-link" href="/technology/2014/06/06/buffer-overflow-attack/">Buffer Overflow Attack</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jan 24, 2014</span>
-        <a class="post-link" href="/technology/2014/01/24/what-is-buffer-overflow-attack/">What is Buffer Overflow Attack</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Sep 10, 2013</span>
-        <a class="post-link" href="/experience/2013/09/10/at-the-finals/">At the Finals</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jul 28, 2013</span>
-        <a class="post-link" href="/technology/how-to/2013/07/28/install-webgoat/">Install WebGoat</a>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+  <p>I have been trying to change the image in the log-in page of my Fedora system for a long time now. I always felt that it
+was a very dull one and wanted to something very interesting there, it can give you a very good first impression. At last
+i have found the way…</p>
 
-  <p><a href="/posts.html">Other Posts</a></p>
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>There is actually not much work in setting up this…</p>
+
+<p>First what you have to do is to copy the image that you require to put in the background to the directory /var/lib/gdm. You
+will be requiring the root access to copy to the final destination.There could be a problem with ownership of the file after
+you copy it. So change both the group and user of the image as gdm.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo cp  /from/required/path/image.jpg  /var/lib/gdm/</code></pre></div>
+
+<p>next change the ownership of the file</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo chown gdm:gdm /var/lib/gdm/image.jpg</code></pre></div>
+
+<p>Next you have to add the user “gdm” to the list of all users who can access the X Server of your system. For that you can:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">xhost +SI:localuser:gdm</code></pre></div>
+
+<p>Then start the gnome control center to cahnge the background as gdm as the user.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo -u gdm dbus-launch gnome-control-center</code></pre></div>
+
+<p>Select the background option. Then select the image from the home folder of the user gdm. Close the gnome-control-center.
+Then remove gdm from the users list who can access the X Server. You can use the following command for that:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">xhost -SI:localuser:gdm</code></pre></div>
+
+<p>Now just logout from your account and see that the background image has changed…. :)</p>
+
+  </article>
 
 </div>
-
       </div>
     </div>
 
