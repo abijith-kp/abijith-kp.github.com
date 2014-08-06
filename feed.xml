@@ -5,9 +5,34 @@
     <description>A place where I can share my thoughts.</description>
     <link>http://abijith-kp.github.io/</link>
     <atom:link href="http://abijith-kp.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 28 Jul 2014 16:11:36 +0530</pubDate>
-    <lastBuildDate>Mon, 28 Jul 2014 16:11:36 +0530</lastBuildDate>
+    <pubDate>Wed, 06 Aug 2014 14:59:17 +0530</pubDate>
+    <lastBuildDate>Wed, 06 Aug 2014 14:59:17 +0530</lastBuildDate>
     <generator>Jekyll v2.1.1</generator>
+    
+      <item>
+        <title>Computer Education</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=nKIu9yen5nc&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;With this post I am not trying to publicize any person or any products. But its just because, this video could convey
+the feelings that I had during those time when started to like programming and computer.&lt;/p&gt;
+
+&lt;p&gt;When the gods in my field are talking then there is nothing left to be said. Truly inspirational for any computer science student.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: &lt;br /&gt;
+Many people, thinks about what they should have learned about
+computer sciencw in their high school; Here is an experience shared at
+&lt;a href=&quot;http://codexjourneys.com/wish-knew-computer-science-high-school&quot;&gt;codexjourneys&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Aug 2014 00:00:00 +0530</pubDate>
+        <link>http://abijith-kp.github.io/video/education/2014/08/06/computer-education/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/video/education/2014/08/06/computer-education/</guid>
+        
+        
+        <category>video</category>
+        
+        <category>education</category>
+        
+      </item>
     
       <item>
         <title>How to use Cython compiler??</title>
@@ -651,26 +676,6 @@ At that point of time I used the first option, which easily solved my problem.&l
         <category>technology</category>
         
         <category>how-to</category>
-        
-      </item>
-    
-      <item>
-        <title>Computer Education</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=nKIu9yen5nc&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;With this post I am not trying to publicize any person or any products. But its just because, this video could convey
-the feelings that I had during those time when started to like programming and computer.&lt;/p&gt;
-
-&lt;p&gt;When the gods in my field are talking then there is nothing left to be said. Truly inspirational for any computer science student.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 28 Feb 2013 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/video/education/2013/02/28/computer-education/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/video/education/2013/02/28/computer-education/</guid>
-        
-        
-        <category>video</category>
-        
-        <category>education</category>
         
       </item>
     
