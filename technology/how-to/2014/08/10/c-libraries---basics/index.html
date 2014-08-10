@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>#define</title>
+    <title>C Libraries - Basics</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="A place where I can share my thoughts.">
-    <link rel="canonical" href="http://abijith-kp.github.io/">
+    <link rel="canonical" href="http://abijith-kp.github.io/technology/how-to/2014/08/10/c-libraries---basics/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -57,44 +57,92 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Recent Posts</h1>
+  <header class="post-header">
+    <h1>C Libraries - Basics</h1>
+    <p class="meta">Aug 10, 2014</p>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">Aug 10, 2014</span>
-        <a class="post-link" href="/technology/how-to/2014/08/10/c-libraries---basics/">C Libraries - Basics</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Aug 6, 2014</span>
-        <a class="post-link" href="/video/education/2014/08/06/computer-education/">Computer Education</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jul 26, 2014</span>
-        <a class="post-link" href="/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/">How to use Cython compiler??</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jun 6, 2014</span>
-        <a class="post-link" href="/technology/2014/06/06/buffer-overflow-attack/">Buffer Overflow Attack</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jan 24, 2014</span>
-        <a class="post-link" href="/technology/2014/01/24/what-is-buffer-overflow-attack/">What is Buffer Overflow Attack</a>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+  <p>Agenda:</p>
 
-  <p><a href="/posts.html">Other Posts</a></p>
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<ul>
+  <li>
+    <p>Which all libraries are installed?</p>
+  </li>
+  <li>
+    <p>How to use that library?</p>
+  </li>
+</ul>
+
+<p>This is a very beginner level how-to article on using a C libraries available in
+your system. I felt like writing this post after I had a difficulty with
+dealing with these things. You should know that this is not a complete guide,
+but could serve the needs of a beginner to understand the what actually is the
+basic requirement.</p>
+
+<p>Lets start…</p>
+
+<p>For using a library in your program, first we need to get two information ready. One
+the location of the header file. ie the <code>.h</code> file and secondly the shared library
+file with the extension <code>.so</code>. <br />
+The default directory where all the headers are stored is <code>/usr/include/</code>. And
+the corresponding .so library file is stored inside <code>/usr/lib</code>, <code>/usr/lib32</code>,
+<code>/usr/lib64</code> directories.</p>
+
+<p>As the first step let’s see how to include a header files. Let the
+header files to be included be in the directory /path/to/my_module and their names be
+<code>header_file1.h, header_file2.h</code>.</p>
+
+<p>So in order to include header_file1.h, there are two ways to do it.</p>
+
+<ul>
+  <li>Using -I option while compiling:<br />
+-I flag is used to give the directory in which the header file is placed. Here
+the required argument is <code>/path/to/my_module</code>.</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gcc -I /path/to/my_module sample.c -o sample</code></pre></div>
+
+<ul>
+  <li>Changing the format of #include pre-processor statement:<br />
+If my_module directory is placed inside the standard include directory, the
+pre-processor include statement can be written as:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;my_module/header_file1.h&gt;</span></code></pre></div>
+
+<p>With this change your code is ready to get linked. In the next step we need
+to tell the compiler which would the shared library that is to be linked with your code.</p>
+
+<p>The library file will have a name in the form of: liblibrary_name.so[.version].
+While compiling a code with a not-standard header file included, then a flag is
+to be given at compile time to GCC.</p>
+
+<p>ie. Here, let the target file is <code>libmy_module.so</code>. Therefore the flag to be used will
+be -lmy_module. The name can be derived as: <br />
+<code>l</code> for telling that it is a library (easy to remember)<br />
+<code>my_module</code> from the name of the shared object</p>
+
+<p>As another example, if the flag used is <code>-labc</code>, then the library file that will
+be used by the compiler would be libabc.so.</p>
+
+<p>Along with gcc the location where the shared object is saved can be mentioned
+using <code>-L</code> option. You can ignore this if it was the default location.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gcc -L /path/to/libmy_module.so -lmy_module sample.c</code></pre></div>
+
+<p>With this I guess one would be able to include any custom header files in your C
+program and make it better!!!.</p>
+
+<h2 id="reference">Reference:</h2>
+
+<p><a href="http://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html">swarthmore.edu</a></p>
+
+  </article>
 
 </div>
-
       </div>
     </div>
 

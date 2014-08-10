@@ -5,9 +5,103 @@
     <description>A place where I can share my thoughts.</description>
     <link>http://abijith-kp.github.io/</link>
     <atom:link href="http://abijith-kp.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 06 Aug 2014 14:59:17 +0530</pubDate>
-    <lastBuildDate>Wed, 06 Aug 2014 14:59:17 +0530</lastBuildDate>
+    <pubDate>Sun, 10 Aug 2014 08:32:05 +0530</pubDate>
+    <lastBuildDate>Sun, 10 Aug 2014 08:32:05 +0530</lastBuildDate>
     <generator>Jekyll v2.1.1</generator>
+    
+      <item>
+        <title>C Libraries - Basics</title>
+        <description>&lt;p&gt;Agenda:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Which all libraries are installed?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How to use that library?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is a very beginner level how-to article on using a C libraries available in
+your system. I felt like writing this post after I had a difficulty with
+dealing with these things. You should know that this is not a complete guide,
+but could serve the needs of a beginner to understand the what actually is the
+basic requirement.&lt;/p&gt;
+
+&lt;p&gt;Lets start…&lt;/p&gt;
+
+&lt;p&gt;For using a library in your program, first we need to get two information ready. One
+the location of the header file. ie the &lt;code&gt;.h&lt;/code&gt; file and secondly the shared library
+file with the extension &lt;code&gt;.so&lt;/code&gt;. &lt;br /&gt;
+The default directory where all the headers are stored is &lt;code&gt;/usr/include/&lt;/code&gt;. And
+the corresponding .so library file is stored inside &lt;code&gt;/usr/lib&lt;/code&gt;, &lt;code&gt;/usr/lib32&lt;/code&gt;,
+&lt;code&gt;/usr/lib64&lt;/code&gt; directories.&lt;/p&gt;
+
+&lt;p&gt;As the first step let’s see how to include a header files. Let the
+header files to be included be in the directory /path/to/my_module and their names be
+&lt;code&gt;header_file1.h, header_file2.h&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So in order to include header_file1.h, there are two ways to do it.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Using -I option while compiling:&lt;br /&gt;
+-I flag is used to give the directory in which the header file is placed. Here
+the required argument is &lt;code&gt;/path/to/my_module&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;gcc -I /path/to/my_module sample.c -o sample&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Changing the format of #include pre-processor statement:&lt;br /&gt;
+If my_module directory is placed inside the standard include directory, the
+pre-processor include statement can be written as:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;my_module/header_file1.h&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With this change your code is ready to get linked. In the next step we need
+to tell the compiler which would the shared library that is to be linked with your code.&lt;/p&gt;
+
+&lt;p&gt;The library file will have a name in the form of: liblibrary_name.so[.version].
+While compiling a code with a not-standard header file included, then a flag is
+to be given at compile time to GCC.&lt;/p&gt;
+
+&lt;p&gt;ie. Here, let the target file is &lt;code&gt;libmy_module.so&lt;/code&gt;. Therefore the flag to be used will
+be -lmy_module. The name can be derived as: &lt;br /&gt;
+&lt;code&gt;l&lt;/code&gt; for telling that it is a library (easy to remember)&lt;br /&gt;
+&lt;code&gt;my_module&lt;/code&gt; from the name of the shared object&lt;/p&gt;
+
+&lt;p&gt;As another example, if the flag used is &lt;code&gt;-labc&lt;/code&gt;, then the library file that will
+be used by the compiler would be libabc.so.&lt;/p&gt;
+
+&lt;p&gt;Along with gcc the location where the shared object is saved can be mentioned
+using &lt;code&gt;-L&lt;/code&gt; option. You can ignore this if it was the default location.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;gcc -L /path/to/libmy_module.so -lmy_module sample.c&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With this I guess one would be able to include any custom header files in your C
+program and make it better!!!.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference:&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html&quot;&gt;swarthmore.edu&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 10 Aug 2014 00:00:00 +0530</pubDate>
+        <link>http://abijith-kp.github.io/technology/how-to/2014/08/10/c-libraries---basics/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/technology/how-to/2014/08/10/c-libraries---basics/</guid>
+        
+        <category>C</category>
+        
+        <category>library</category>
+        
+        <category>gcc</category>
+        
+        
+        <category>technology</category>
+        
+        <category>how-to</category>
+        
+      </item>
     
       <item>
         <title>Computer Education</title>
@@ -729,54 +823,6 @@ a correct answer, cannot be explained in words… :)&lt;/p&gt;
         
         
         <category>experience</category>
-        
-      </item>
-    
-      <item>
-        <title>Fedora login page</title>
-        <description>&lt;p&gt;I have been trying to change the image in the log-in page of my Fedora system for a long time now. I always felt that it
-was a very dull one and wanted to something very interesting there, it can give you a very good first impression. At last
-i have found the way…&lt;/p&gt;
-
-&lt;p&gt;There is actually not much work in setting up this…&lt;/p&gt;
-
-&lt;p&gt;First what you have to do is to copy the image that you require to put in the background to the directory /var/lib/gdm. You
-will be requiring the root access to copy to the final destination.There could be a problem with ownership of the file after
-you copy it. So change both the group and user of the image as gdm.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo cp  /from/required/path/image.jpg  /var/lib/gdm/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;next change the ownership of the file&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown gdm:gdm /var/lib/gdm/image.jpg&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Next you have to add the user “gdm” to the list of all users who can access the X Server of your system. For that you can:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;xhost +SI:localuser:gdm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Then start the gnome control center to cahnge the background as gdm as the user.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo -u gdm dbus-launch gnome-control-center&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Select the background option. Then select the image from the home folder of the user gdm. Close the gnome-control-center.
-Then remove gdm from the users list who can access the X Server. You can use the following command for that:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;xhost -SI:localuser:gdm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now just logout from your account and see that the background image has changed…. :)&lt;/p&gt;
-</description>
-        <pubDate>Sun, 13 Jan 2013 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/technology/how-to/2013/01/13/fedora-login-page/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/technology/how-to/2013/01/13/fedora-login-page/</guid>
-        
-        <category>fedora</category>
-        
-        <category>login</category>
-        
-        
-        <category>technology</category>
-        
-        <category>how-to</category>
         
       </item>
     
