@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>What is Buffer Overflow Attack</title>
+    <title>Archive</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="A place where I can share my thoughts.">
-    <link rel="canonical" href="http://abijith-kp.github.io/technology/2014/01/24/what-is-buffer-overflow-attack/">
+    <link rel="canonical" href="http://abijith-kp.github.io/archive.html">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -74,67 +74,72 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>What is Buffer Overflow Attack</h1>
-    <p class="meta">Jan 24, 2014</p>
+    <h1>Archive</h1>
   </header>
 
   <article class="post-content">
-  <p>Have anyone you heard the statement - <em>Water water everywhere. But not a drop to drink</em>.</p>
-
-<p>You will understand this, if you start looking for a tutorial to learn about buffer overflow. Everyone of it would
-tell the same set of instructions, but nothing works. They all are missing out the main and important points. With
-this post I am trying to make up for that problem. Here I will be giving all the required background research about
-buffer overflow and the attack which uses this exploit.</p>
-
-<p>When we pour more water into a glass, it overflows. The overflown water can really be a mess. The same thing happens
-in the case of a buffer overflow in a program also. When the size of the data to be stored is more than the size of the
-buffer allocated for the variable, the data is copied to the adjacent memory locations. By the way a buffer is a term
-given for the continues memory locations allocated for a variable. this overflow may lead to overwriting of the adjacent
-stack pointers such as ESP or EIP. This kind of overwriting of stack pointers can lead to serious problems like escalating
-ones privilege, or may be crashing the whole system. Even when people always talk about(me included :P) styles of
-programming and other related things but programmers are never taught or they think about SECURE CODDING which is equally
-important but ironically given the least importance(May only be true among beginners and intermediate people. This is since
-expert people works in production environment and its very crucial in that situation to follow security measures).</p>
-
-<p>Buffer overflow attack mainly aims at those executable files which has a setuid bit enabled. This setuid bit gives the
-executable a property that it will inherit all the privileges of its owner rather than the user which runs the executable.
-So if somehow a shell is spawned while running this process the shell will run with the privileges of root user if the owner
-of the executable was root. Thus explicitly, the assumptions that we take while using the below mentioned attack on an
-executable are:</p>
-
-<ul>
-  <li>
-    <p>Owner of the executable is root</p>
-  </li>
-  <li>
-    <p>Setuid bit is enabled</p>
-  </li>
-</ul>
-
-<p>Next two main concepts that we have to give importance are NOP Sled and the payload script named as a shell script.</p>
-
-<p>Its continuation can be read <a href="/technology/2014/07/25/buffer-overflow-attack/">here</a></p>
+    <ul class="posts">
+    
+      <li>
+        <span class="post-date">Aug 10, 2014</span>
+        <a class="post-link" href="/technology/how-to/2014/08/10/c-libraries---basics/">C Libraries - Basics</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Aug 6, 2014</span>
+        <a class="post-link" href="/video/education/2014/08/06/computer-education/">Computer Education</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Jul 26, 2014</span>
+        <a class="post-link" href="/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/">How to use Cython compiler??</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Jun 6, 2014</span>
+        <a class="post-link" href="/technology/2014/06/06/buffer-overflow-attack/">Buffer Overflow Attack</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Jan 24, 2014</span>
+        <a class="post-link" href="/technology/2014/01/24/what-is-buffer-overflow-attack/">What is Buffer Overflow Attack</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Sep 10, 2013</span>
+        <a class="post-link" href="/experience/2013/09/10/at-the-finals/">At the Finals</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Jul 28, 2013</span>
+        <a class="post-link" href="/technology/how-to/2013/07/28/install-webgoat/">Install WebGoat</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Apr 21, 2013</span>
+        <a class="post-link" href="/experience/2013/04/21/hacking-at-inctf/">Hacking at InCTF</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Mar 20, 2013</span>
+        <a class="post-link" href="/technology/how-to/2013/03/20/lexyacc-in-arch-linux/">Lex/YACC in Arch Linux</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Jan 13, 2013</span>
+        <a class="post-link" href="/experience/2013/01/13/jack-of-all-master-of-none/">Jack of all. Master of none.</a>
+      </li>
+    
+      <li>
+        <span class="post-date">Jan 13, 2013</span>
+        <a class="post-link" href="/technology/how-to/2013/01/13/fedora-login-page/">Fedora login page</a>
+      </li>
+    
+  </ul>
 
   </article>
 
 </div>
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-  var disqus_shortname = 'abijithkp'; // required: replace example with your forum shortname
-
-  /* * * DON'T EDIT BELOW THIS LINE * * */
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
       </div>
     </div>
 

@@ -175,6 +175,21 @@ a:visited { color: #205caa; }
   font-weight: 300;
 }
 
+.post-header h2 {
+  font-size: 26px;
+  letter-spacing: -1.75px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.hidden { display: none; }
+.unhidden { display: block; }
+.unhidden_p { display: block;
+              font-size: 15px;
+              color: #818181;
+}
+
+
 .post-header .meta {
   font-size: 15px;
   color: #818181;
