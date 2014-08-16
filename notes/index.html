@@ -78,22 +78,12 @@
   </header>
 
   <article class="post-content">
-  <script type="text/javascript">
-  function unhide(divID) {
-    var item = document.getElementById(divID);
-    var p_item = document.getElementById("p_".concat(divID));
-    if (item) {
-      item.className=(item.className=='hidden')?'unhidden':'hidden';
-      p_item.className=(p_item.className=='hidden')?'unhidden_p':'hidden';
-    }
-}
-</script>
-
+  <script src="http://abijith-kp.github.io/assets/jquery-2.1.1.js"></script>
 
 <div class="posts">
   
   <li>
-    <a class="post-link" href="javascript:unhide('vimtip1');">Vim Tip - 1</a>
+    <a class="post-link" id=avimtip1 href=#vimtip1>Vim Tip - 1</a>
     <span id=p_vimtip1 class="unhidden_p"> How to shift block of code in VIM </span>
 
     <div id=vimtip1 class="hidden">
@@ -112,10 +102,10 @@
 8| GNU General Public License.</code></pre></div>
 
 <p>To shift the block of text from line 3 to 6 two tab length to right:<br />
-:3,5&gt;&gt;</p>
+<code>:3,5&gt;&gt;</code></p>
 
 <p>Shifting lines 5 and 6 to right, one tab length:<br />
-:5,6&lt;</p>
+<code>:5,6&lt;</code></p>
 
 <p>Final text:</p>
 
@@ -131,6 +121,48 @@
 
       </article>
     </div>
+    <script>
+      $( "#avimtip1" ).click(function() {
+        $( "#p_vimtip1" ).slideToggle( "slow" );
+        $( "#vimtip1" ).slideToggle( "slow" );
+        });
+    </script>
+
+  </li>
+
+  
+  <li>
+    <a class="post-link" id=avimtip2 href=#vimtip2>Vim Tip - 2</a>
+    <span id=p_vimtip2 class="unhidden_p"> How tosdfsdf shift block of code in VIM </span>
+
+    <div id=vimtip2 class="hidden">
+      <article class="post-content">
+        <p>To shift a block of text left or right:</p>
+
+<p>Shifting lines 5 and 6 to right, one tab length:<br />
+<code>:5,6&lt;</code></p>
+
+<p>Final text:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">1| Vim is a text editor written by Bram
+2| Moolenaar and first released publicly in 1991. Based on the ideas of the vi
+3|          editor common to Unix-like systems, Vim is designed for use both from a command
+4|          line interface and as a standalone application in a graphical user interface.
+5|      Vim is free and open source software and is released under a license that
+6|      includes some charityware clauses, encouraging users who enjoy the software to
+7| consider donating to children in Uganda.[4] The license is compatible with the
+8| GNU General Public License.</code></pre></div>
+
+
+      </article>
+    </div>
+    <script>
+      $( "#avimtip2" ).click(function() {
+        $( "#p_vimtip2" ).slideToggle( "slow" );
+        $( "#vimtip2" ).slideToggle( "slow" );
+        });
+    </script>
+
   </li>
 
   
