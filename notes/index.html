@@ -78,12 +78,45 @@
   </header>
 
   <article class="post-content">
-  <script src="http://abijith-kp.github.io/assets/jquery-2.1.1.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <div class="posts">
   
   <li>
-    <a class="post-link" id=avimtip1 href=#vimtip1>Vim Tip - 1</a>
+    <a class="post-link" id=aadvicetomyself href="#">An advice to myself</a></br>
+    <span id=p_advicetomyself class="unhidden_p"> Part of a conversation between Ernest Rutherford and his student </span>
+
+    <div id=advicetomyself class="hidden">
+      <article class="post-content">
+        <p>One of the student in <a href="http://en.wikipedia.org/wiki/Ernest_Rutherford">Rutherford</a>’s
+class was very hard working. Rutherford had noticed it and asked one evening:</p>
+
+<ul>
+  <li>
+    <p>Do you work in the mornings too?</p>
+  </li>
+  <li>
+    <p>Yes, -proudly replies the student(, he was sure that he would be commended)</p>
+  </li>
+  <li>
+    <p>But when do you think? Mr. Rutherford replied. :)</p>
+  </li>
+</ul>
+
+      </article>
+    </div>
+    <script>
+      $( "#aadvicetomyself" ).click(function() {
+        $( "#p_advicetomyself" ).slideToggle( "slow" );
+        $( "#advicetomyself" ).slideToggle( "slow" );
+        });
+    </script>
+
+  </li>
+
+  
+  <li>
+    <a class="post-link" id=avimtip1 href="#">Vim Tip - 1</a></br>
     <span id=p_vimtip1 class="unhidden_p"> How to shift block of code in VIM </span>
 
     <div id=vimtip1 class="hidden">
