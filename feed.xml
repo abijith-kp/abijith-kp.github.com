@@ -5,8 +5,8 @@
     <description>A place where I can share my thoughts.</description>
     <link>http://abijith-kp.github.io/</link>
     <atom:link href="http://abijith-kp.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 17 Aug 2014 08:18:49 +0530</pubDate>
-    <lastBuildDate>Sun, 17 Aug 2014 08:18:49 +0530</lastBuildDate>
+    <pubDate>Fri, 22 Aug 2014 23:28:41 +0530</pubDate>
+    <lastBuildDate>Fri, 22 Aug 2014 23:28:41 +0530</lastBuildDate>
     <generator>Jekyll v2.1.1</generator>
     
       <item>
@@ -96,6 +96,14 @@ program and make it better!!!.&lt;/p&gt;
         
         <category>gcc</category>
         
+        <category>learning</category>
+        
+        <category>create</category>
+        
+        <category>beginner</category>
+        
+        <category>intermediate</category>
+        
         
         <category>technology</category>
         
@@ -120,6 +128,12 @@ computer sciencw in their high school; Here is an experience shared at
         <pubDate>Wed, 06 Aug 2014 00:00:00 +0530</pubDate>
         <link>http://abijith-kp.github.io/video/education/2014/08/06/computer-education/</link>
         <guid isPermaLink="true">http://abijith-kp.github.io/video/education/2014/08/06/computer-education/</guid>
+        
+        <category>experiments</category>
+        
+        <category>learning</category>
+        
+        <category>inspiration</category>
         
         
         <category>video</category>
@@ -291,6 +305,12 @@ will help you learn some Cython code.&lt;/p&gt;
         <category>cython</category>
         
         <category>compiler</category>
+        
+        <category>optimize</category>
+        
+        <category>c</category>
+        
+        <category>languages</category>
         
         
         <category>technology</category>
@@ -534,6 +554,8 @@ executable are:&lt;/p&gt;
         
         <category>security</category>
         
+        <category>introduction</category>
+        
         
         <category>technology</category>
         
@@ -605,6 +627,12 @@ to them as well.&lt;/p&gt;
         
         <category>bufferoverflow</category>
         
+        <category>learning</category>
+        
+        <category>amrita</category>
+        
+        <category>competition</category>
+        
         
         <category>experience</category>
         
@@ -668,7 +696,11 @@ If you get an ERROR 403 while starting on port 80, it may be due to IIS that is 
         
         <category>java</category>
         
-        <category>arch-linux</category>
+        <category>arch linux</category>
+        
+        <category>installation</category>
+        
+        <category>owasp</category>
         
         
         <category>technology</category>
@@ -723,6 +755,12 @@ in those).&lt;/p&gt;
         
         <category>inctf</category>
         
+        <category>learning</category>
+        
+        <category>challenge</category>
+        
+        <category>amrita</category>
+        
         
         <category>experience</category>
         
@@ -762,9 +800,15 @@ At that point of time I used the first option, which easily solved my problem.&l
         
         <category>flex</category>
         
-        <category>arch-linux</category>
+        <category>arch linux</category>
         
         <category>compiler</category>
+        
+        <category>lex</category>
+        
+        <category>flex static</category>
+        
+        <category>fedora</category>
         
         
         <category>technology</category>
@@ -820,6 +864,12 @@ a correct answer, cannot be explained in words… :)&lt;/p&gt;
         <pubDate>Sun, 13 Jan 2013 00:00:00 +0530</pubDate>
         <link>http://abijith-kp.github.io/experience/2013/01/13/jack-of-all-master-of-none/</link>
         <guid isPermaLink="true">http://abijith-kp.github.io/experience/2013/01/13/jack-of-all-master-of-none/</guid>
+        
+        <category>hello world</category>
+        
+        <category>languages</category>
+        
+        <category>learning</category>
         
         
         <category>experience</category>
