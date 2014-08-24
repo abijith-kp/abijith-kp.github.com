@@ -5,8 +5,8 @@
     <description>A place where I can share my thoughts.</description>
     <link>http://abijith-kp.github.io/</link>
     <atom:link href="http://abijith-kp.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 23 Aug 2014 23:00:47 +0530</pubDate>
-    <lastBuildDate>Sat, 23 Aug 2014 23:00:47 +0530</lastBuildDate>
+    <pubDate>Sun, 24 Aug 2014 22:24:35 +0530</pubDate>
+    <lastBuildDate>Sun, 24 Aug 2014 22:24:35 +0530</lastBuildDate>
     <generator>Jekyll v2.1.1</generator>
     
       <item>
@@ -122,7 +122,7 @@ the feelings that I had during those time when started to like programming and c
 
 &lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: &lt;br /&gt;
 Many people, thinks about what they should have learned about
-computer sciencw in their high school; Here is an experience shared at
+computer science in their high school; Here is an experience shared at
 &lt;a href=&quot;http://codexjourneys.com/wish-knew-computer-science-high-school&quot;&gt;codexjourneys&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Aug 2014 00:00:00 +0530</pubDate>
@@ -330,10 +330,10 @@ a second part for it. Coming straight to the point, we have it here. :)&lt;/p&gt
 &lt;p&gt;Just a recap of what we have talked about before on buffer over flow attacks: Any
 attack that exploits the point that the copying of a string to a buffer is not
 checked for size(string length) limit can be included in the Buffer Overflow attack
-catgory. &lt;/p&gt;
+category.&lt;/p&gt;
 
 &lt;p&gt;At first we will look at a simple demonstration for the buffer overflow attack.
-For this we should have a vulnarable program written. Without loss of
+For this we should have a vulnerable program written. Without loss of
 generality we can use the below program for demonstration and if required
 further study because as the program size increases, just the complexity to
 find the limit for buffer overflowing increases, mostly all other factors
@@ -713,7 +713,7 @@ If you get an ERROR 403 while starting on port 80, it may be due to IIS that is 
         <title>Hacking at InCTF</title>
         <description>&lt;p&gt;Usually I just skim through my NITC mail, and checks only those send by my Class Representative or teachers. One day I
 read a mail forwarded by one of my seniors &lt;a href=&quot;http://k4rtik.wordpress.com&quot;&gt;Kartik&lt;/a&gt;. It was about a hacking competition
-conducted by Amruta University called &lt;a href=&quot;www.inctf.in&quot;&gt;InCTF&lt;/a&gt; which had 2 preliminary rounds and a final round. It was a
+conducted by Amrita University called &lt;a href=&quot;www.inctf.in&quot;&gt;InCTF&lt;/a&gt; which had 2 preliminary rounds and a final round. It was a
 Capture The Flag kind of competition. At that time I wasn’t in the mood of doing anything as I had to complete my lab
 assignments (which I was in a bad situation) and also if by any chance I got selected, the second round will be at the time
 of our exams so I ignored it. Later when I was searching for some thing I again came across this competition. This was the
