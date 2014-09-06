@@ -112,6 +112,40 @@ class was very hard working. Rutherford had noticed it and asked one evening:</p
 
   
   <li>
+    <a class="post-link" id=abashtip1 href="#">Bash Tip - 1</a></br>
+    <span id=p_bashtip1 class="unhidden_p"> Easily repeat a character N times without writing it </span>
+
+    <div id=bashtip1 class="hidden">
+      <article class="post-content">
+        <p>If you want to repeat a character N times on a bash shell, say for example your
+variable name is <code>aaaaa</code>; Then a simple way to do it is not writting it
+repeatedly 5, do this:</p>
+
+<p>Initial Prompt: me@me $</p>
+
+<p>Step 1  : Alt + N \
+Prompt  : (arg: N)
+Ex      : Alt + 5 ==&gt; (arg: 5)</p>
+
+<p>Step 2  : (arg: N) <char_to_repeat>
+Prompt  : me@me $ <char_to_repeat><char_to_repeat>.....N times
+Ex      : (arg: 5) a ==&gt; me@me $ aaaaa</char_to_repeat></char_to_repeat></char_to_repeat></p>
+
+<p>Final Status: me@me $ aaaaa</p>
+
+      </article>
+    </div>
+    <script>
+      $( "#abashtip1" ).click(function() {
+        $( "#p_bashtip1" ).slideToggle( "slow" );
+        $( "#bashtip1" ).slideToggle( "slow" );
+        });
+    </script>
+
+  </li>
+
+  
+  <li>
     <a class="post-link" id=avimtip1 href="#">Vim Tip - 1</a></br>
     <span id=p_vimtip1 class="unhidden_p"> How to shift block of code in VIM </span>
 
