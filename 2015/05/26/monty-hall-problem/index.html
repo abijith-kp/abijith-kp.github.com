@@ -4,15 +4,15 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Setup Lex/YACC in Arch Linux in Fedora</title>
+    <title>#define | A place where I can share My thoughts.</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="A place where I can share my thoughts.">
-    <meta name="keywords" content="flex, arch linux, compiler, lex, flex static, fedora">
+    <meta name="keywords" content="mathematics, monty, hall, problem, probability, puzzle">
     <!-- <link
     href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
     rel="stylesheet"> -->
 
-    <link rel="canonical" href="http://abijith-kp.github.io/technology/how-to/2013/03/20/lexyacc-in-arch-linux/">
+    <link rel="canonical" href="http://abijith-kp.github.io/2015/05/26/monty-hall-problem/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -80,36 +80,42 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>Lex/YACC in Arch Linux</h1>
-    <p class="meta">Mar 20, 2013</p>
+    <h1>Monty Hall Problem</h1>
+    <p class="meta">May 26, 2015</p>
   </header>
 
   <article class="post-content">
-  <p>In our sixth semester of B-Tech we have a course on Compiler Design. For that two tools are being used: Lex which is a
-lexical analyzer and Yacc is a parser generator. While compiling the code for the lexical analyzer created by lex and the
-code for parse created by yacc we require few libraries to include some important function templates into the code. the
-flags used along with gcc for this purpose are <code>-ll</code> and  <code>-lfl</code>.</p>
+  <p>The <a href="http://en.wikipedia.org/wiki/Monty_Hall">Monty Hall problem</a> states that:</p>
 
-<p>After installing Lex/Yacc in my Fedora system few months back, I got an error stating that definition for yywrap is not
-included. After searching for some time I got the solution for it.</p>
+<blockquote>
+  <p>“Suppose you’re on a game show, and you’re given the choice of three doors:
+Behind one door is a car; behind the others, goats. You pick a door, say No. 1,
+and the host, who knows what’s behind the doors, opens another door, say No. 3,
+which has a goat. He then says to you, “Do you want to pick door No. 2?” Is it
+to your advantage to switch your choice?”</p>
+</blockquote>
 
-<p>There can be methods to solve it :</p>
+<p>Befire reading further, you may just note down what is there in your
+mind(Spoiler Alert!! :D). The explanation given below involves only basic
+probability; And I have put down everything in the way I had understood the
+problem.</p>
 
-<ul>
-  <li>
-    <p>Just include the function yywrap in the lex file in the function definition part(third part of the code).Compiling can be
-done as <code>gcc lex.yy.c y.tab.c</code></p>
-  </li>
-  <li>
-    <p>Install <strong>flex-static</strong> library to use the gcc flag -ll. After this just compile it like <code>gcc lex.yy.c y.tab.c -ll</code></p>
-  </li>
-</ul>
+<p>Basic inferences that can be made: <br />
+    P(G) = 2/3 <br />
+    P(C) = 1/3</p>
 
-<p>But later I changed to Arch Linux, after 1 year of using Fedora.</p>
+<p>In the next step, after the host opens the door, where the goat is present,
+only two options are left for the player. One of which, the player had chosen.</p>
 
-<p>But in Arch when I tryed to compile the lex/yacc file initially the same problem arised. I thought I could solve it the
-same way as before. All the researches I had done was in vain. I couldn’t find a package similar to flex-static anywhere.
-At that point of time I used the first option, which easily solved my problem.</p>
+<p>Let’s assume that the player always changes his choice. Now there is a
+possibility that the currently chosen door has a goat or a car behind it. <br />
+If it was a car behind it, you would surely opt to choose the next unopened
+door(assumed) - the probablity is 1/3, i.e. the probability of choosing car. <br />
+Else if there was a goat behind and you choose the next door - the probability
+is 2/3.</p>
+
+<p>Thus it is highly probable that you could win a car if you opt to change your
+choice if some problem similar to the above is thrown at you!! :)</p>
 
   </article>
 
