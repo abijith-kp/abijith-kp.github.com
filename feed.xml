@@ -5,9 +5,54 @@
     <description>A place where I can share my thoughts.</description>
     <link>http://abijith-kp.github.io/</link>
     <atom:link href="http://abijith-kp.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 08 Jul 2015 05:46:56 +0530</pubDate>
-    <lastBuildDate>Wed, 08 Jul 2015 05:46:56 +0530</lastBuildDate>
+    <pubDate>Sun, 20 Sep 2015 07:17:33 +0530</pubDate>
+    <lastBuildDate>Sun, 20 Sep 2015 07:17:33 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Emolytics - A new try on data visualisation</title>
+        <description>&lt;p&gt;I was actually interested in how &lt;a href=&quot;https://en.wikipedia.org/wiki/Natural_language_processing&quot; title=&quot;NLP&quot;&gt;Natural Language Programming&lt;/a&gt; was &lt;a href=&quot;https://github.com/abijith-kp/DataMining_NLP_AI&quot; title=&quot;github.com/abijith-kp/DataMining_NLP_AI&quot;&gt;working&lt;/a&gt;
+on and was trying to learn how the actual work flow happens. The current social
+networking sites would be one the best places to get some interesting
+informations from. Then the idea stoke me. Why don’t I jus combine them??&lt;/p&gt;
+
+&lt;p&gt;The idea is basically simple. As a preprocessing, create a classifier to
+classify the tweets as positive or negative baised ones(basically do &lt;a href=&quot;https://en.wikipedia.org/wiki/Sentiment_analysis&quot; title=&quot;Sentiment Analysis&quot;&gt;sentiment
+analysis&lt;/a&gt; on the tweets). The using the &lt;a href=&quot;https://dev.twitter.com/streaming/overview&quot;&gt;twitter streaming API&lt;/a&gt;, iterate through
+each incomming tweets, classify them into their respective classes. The
+location details are also taken from the metadata of the incomming tweets. The
+next step comes the visualisation part. Using the above calculated details like
+location and sentiment class.&lt;/p&gt;
+
+&lt;p&gt;In the first prototype that I had used &lt;a href=&quot;http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html&quot; title=&quot;TfidfVectorizer&quot;&gt;TfidfVectorizer&lt;/a&gt; for &lt;a href=&quot;http://scikit-learn.org/stable/modules/feature_extraction.html#feature-extraction&quot; title=&quot;Feature Extraction&quot;&gt;feature extraction&lt;/a&gt;,
+&lt;a href=&quot;http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html&quot; title=&quot;MultinomialNB&quot;&gt;MultinomialNB&lt;/a&gt; for binary classification. SKlearn library was used for both these
+tasks. For accessing twitter api, I made use of the &lt;a href=&quot;http://www.tweepy.org/&quot;&gt;Tweepy&lt;/a&gt; python library. The
+visualisation part was done using the &lt;a href=&quot;http://matplotlib.org/basemap/&quot; title=&quot;basemap&quot;&gt;basemap&lt;/a&gt; extension for &lt;a href=&quot;http://matplotlib.org/&quot; title=&quot;matplotlib&quot;&gt;matplotlib&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note 1: I am not sure wheather this task was done before by someone else. This is
+only meant as a hobby project.&lt;/p&gt;
+
+&lt;p&gt;Note 2: I’ll update this post soon.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 20 Sep 2015 00:00:00 +0530</pubDate>
+        <link>http://abijith-kp.github.io/2015/09/20/emolytics---a-new-try-on-data-visualisation/</link>
+        <guid isPermaLink="true">http://abijith-kp.github.io/2015/09/20/emolytics---a-new-try-on-data-visualisation/</guid>
+        
+        <category>data mining</category>
+        
+        <category>nlp</category>
+        
+        <category>sklearn</category>
+        
+        <category>matplotlib</category>
+        
+        <category>basemap</category>
+        
+        <category>twitter</category>
+        
+        
+      </item>
     
       <item>
         <title>Monty Hall Problem</title>
@@ -816,57 +861,6 @@ in those).&lt;/p&gt;
         
         
         <category>experience</category>
-        
-      </item>
-    
-      <item>
-        <title>Lex/YACC in Arch Linux</title>
-        <description>&lt;p&gt;In our sixth semester of B-Tech we have a course on Compiler Design. For that two tools are being used: Lex which is a
-lexical analyzer and Yacc is a parser generator. While compiling the code for the lexical analyzer created by lex and the
-code for parse created by yacc we require few libraries to include some important function templates into the code. the
-flags used along with gcc for this purpose are &lt;code&gt;-ll&lt;/code&gt; and  &lt;code&gt;-lfl&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;After installing Lex/Yacc in my Fedora system few months back, I got an error stating that definition for yywrap is not
-included. After searching for some time I got the solution for it.&lt;/p&gt;
-
-&lt;p&gt;There can be methods to solve it :&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Just include the function yywrap in the lex file in the function definition part(third part of the code).Compiling can be
-done as &lt;code&gt;gcc lex.yy.c y.tab.c&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Install &lt;strong&gt;flex-static&lt;/strong&gt; library to use the gcc flag -ll. After this just compile it like &lt;code&gt;gcc lex.yy.c y.tab.c -ll&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;But later I changed to Arch Linux, after 1 year of using Fedora.&lt;/p&gt;
-
-&lt;p&gt;But in Arch when I tryed to compile the lex/yacc file initially the same problem arised. I thought I could solve it the
-same way as before. All the researches I had done was in vain. I couldn’t find a package similar to flex-static anywhere.
-At that point of time I used the first option, which easily solved my problem.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 20 Mar 2013 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/technology/how-to/2013/03/20/lexyacc-in-arch-linux/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/technology/how-to/2013/03/20/lexyacc-in-arch-linux/</guid>
-        
-        <category>flex</category>
-        
-        <category>arch linux</category>
-        
-        <category>compiler</category>
-        
-        <category>lex</category>
-        
-        <category>flex static</category>
-        
-        <category>fedora</category>
-        
-        
-        <category>technology</category>
-        
-        <category>how-to</category>
         
       </item>
     

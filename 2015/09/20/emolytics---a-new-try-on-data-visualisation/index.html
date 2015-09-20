@@ -7,12 +7,12 @@
     <title>#define | A place where I can share My thoughts.</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="A place where I can share my thoughts.">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="data mining, nlp, sklearn, matplotlib, basemap, twitter">
     <!-- <link
     href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
     rel="stylesheet"> -->
 
-    <link rel="canonical" href="http://abijith-kp.github.io/">
+    <link rel="canonical" href="http://abijith-kp.github.io/2015/09/20/emolytics---a-new-try-on-data-visualisation/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -77,43 +77,57 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Recent Posts</h1>
+  <header class="post-header">
+    <h1>Emolytics - A new try on data visualisation</h1>
+    <p class="meta">Sep 20, 2015</p>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">Sep 20, 2015</span>
-        <a class="post-link" href="/2015/09/20/emolytics---a-new-try-on-data-visualisation/">Emolytics - A new try on data visualisation</a>
-      </li>
-    
-      <li>
-        <span class="post-date">May 26, 2015</span>
-        <a class="post-link" href="/2015/05/26/monty-hall-problem/">Monty Hall Problem</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Aug 10, 2014</span>
-        <a class="post-link" href="/technology/how-to/2014/08/10/c-libraries---basics/">C Libraries - Basics</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Aug 6, 2014</span>
-        <a class="post-link" href="/video/education/2014/08/06/computer-education/">Computer Education</a>
-      </li>
-    
-      <li>
-        <span class="post-date">Jul 26, 2014</span>
-        <a class="post-link" href="/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/">How to use Cython compiler??</a>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+  <p>I was actually interested in how <a href="https://en.wikipedia.org/wiki/Natural_language_processing" title="NLP">Natural Language Programming</a> was <a href="https://github.com/abijith-kp/DataMining_NLP_AI" title="github.com/abijith-kp/DataMining_NLP_AI">working</a>
+on and was trying to learn how the actual work flow happens. The current social
+networking sites would be one the best places to get some interesting
+informations from. Then the idea stoke me. Why don’t I jus combine them??</p>
 
-  <p>You can take a look at the <a href="/archive.html">Archive</a>.</p>
-  <p class="rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a></p>
+<p>The idea is basically simple. As a preprocessing, create a classifier to
+classify the tweets as positive or negative baised ones(basically do <a href="https://en.wikipedia.org/wiki/Sentiment_analysis" title="Sentiment Analysis">sentiment
+analysis</a> on the tweets). The using the <a href="https://dev.twitter.com/streaming/overview">twitter streaming API</a>, iterate through
+each incomming tweets, classify them into their respective classes. The
+location details are also taken from the metadata of the incomming tweets. The
+next step comes the visualisation part. Using the above calculated details like
+location and sentiment class.</p>
+
+<p>In the first prototype that I had used <a href="http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html" title="TfidfVectorizer">TfidfVectorizer</a> for <a href="http://scikit-learn.org/stable/modules/feature_extraction.html#feature-extraction" title="Feature Extraction">feature extraction</a>,
+<a href="http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html" title="MultinomialNB">MultinomialNB</a> for binary classification. SKlearn library was used for both these
+tasks. For accessing twitter api, I made use of the <a href="http://www.tweepy.org/">Tweepy</a> python library. The
+visualisation part was done using the <a href="http://matplotlib.org/basemap/" title="basemap">basemap</a> extension for <a href="http://matplotlib.org/" title="matplotlib">matplotlib</a>.</p>
+
+<p>Note 1: I am not sure wheather this task was done before by someone else. This is
+only meant as a hobby project.</p>
+
+<p>Note 2: I’ll update this post soon.</p>
+
+
+  </article>
 
 </div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'abijithkp'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
       </div>
     </div>
