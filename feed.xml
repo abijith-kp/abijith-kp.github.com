@@ -3,10 +3,10 @@
   <channel>
     <title>#define</title>
     <description>A place where I can share my thoughts.</description>
-    <link>http://abijith-kp.github.io/</link>
-    <atom:link href="http://abijith-kp.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 20 Sep 2015 07:17:33 +0530</pubDate>
-    <lastBuildDate>Sun, 20 Sep 2015 07:17:33 +0530</lastBuildDate>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 06 Jan 2016 22:01:05 +0530</pubDate>
+    <lastBuildDate>Wed, 06 Jan 2016 22:01:05 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -36,8 +36,8 @@ only meant as a hobby project.&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 20 Sep 2015 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/2015/09/20/emolytics---a-new-try-on-data-visualisation/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/2015/09/20/emolytics---a-new-try-on-data-visualisation/</guid>
+        <link>http://0.0.0.0:4000/2015/09/20/emolytics---a-new-try-on-data-visualisation/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2015/09/20/emolytics---a-new-try-on-data-visualisation/</guid>
         
         <category>data mining</category>
         
@@ -89,8 +89,8 @@ is 2/3.&lt;/p&gt;
 choice if some problem similar to the above is thrown at you!! :)&lt;/p&gt;
 </description>
         <pubDate>Tue, 26 May 2015 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/2015/05/26/monty-hall-problem/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/2015/05/26/monty-hall-problem/</guid>
+        <link>http://0.0.0.0:4000/2015/05/26/monty-hall-problem/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2015/05/26/monty-hall-problem/</guid>
         
         <category>mathematics</category>
         
@@ -185,8 +185,8 @@ program and make it better!!!.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html&quot;&gt;swarthmore.edu&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 10 Aug 2014 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/technology/how-to/2014/08/10/c-libraries---basics/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/technology/how-to/2014/08/10/c-libraries---basics/</guid>
+        <link>http://0.0.0.0:4000/technology/how-to/2014/08/10/c-libraries---basics/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/technology/how-to/2014/08/10/c-libraries---basics/</guid>
         
         <category>C</category>
         
@@ -224,8 +224,8 @@ computer science in their high school; Here is an experience shared at
 &lt;a href=&quot;http://codexjourneys.com/wish-knew-computer-science-high-school&quot;&gt;codexjourneys&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Aug 2014 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/video/education/2014/08/06/computer-education/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/video/education/2014/08/06/computer-education/</guid>
+        <link>http://0.0.0.0:4000/video/education/2014/08/06/computer-education/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/video/education/2014/08/06/computer-education/</guid>
         
         <category>experiments</category>
         
@@ -395,8 +395,8 @@ Recorded running time for module imported from shared library:&lt;/p&gt;
 will help you learn some Cython code.&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Jul 2014 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/</guid>
+        <link>http://0.0.0.0:4000/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/</guid>
         
         <category>python</category>
         
@@ -586,8 +586,8 @@ the input(instead of the command list for system function call)which would get
 executed in the stack.&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Jun 2014 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/technology/2014/06/06/buffer-overflow-attack/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/technology/2014/06/06/buffer-overflow-attack/</guid>
+        <link>http://0.0.0.0:4000/technology/2014/06/06/buffer-overflow-attack/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/technology/2014/06/06/buffer-overflow-attack/</guid>
         
         <category>security</category>
         
@@ -643,8 +643,8 @@ executable are:&lt;/p&gt;
 &lt;p&gt;Its continuation can be read &lt;a href=&quot;/technology/2014/07/25/buffer-overflow-attack/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 24 Jan 2014 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/technology/2014/01/24/what-is-buffer-overflow-attack/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/technology/2014/01/24/what-is-buffer-overflow-attack/</guid>
+        <link>http://0.0.0.0:4000/technology/2014/01/24/what-is-buffer-overflow-attack/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/technology/2014/01/24/what-is-buffer-overflow-attack/</guid>
         
         <category>bufferoverflow</category>
         
@@ -716,8 +716,8 @@ to them as well.&lt;/p&gt;
 &lt;p&gt;Anyway now I am hopping to be a part of future verions of InCTF and many other events of similar kind. :)&lt;/p&gt;
 </description>
         <pubDate>Tue, 10 Sep 2013 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/experience/2013/09/10/at-the-finals/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/experience/2013/09/10/at-the-finals/</guid>
+        <link>http://0.0.0.0:4000/experience/2013/09/10/at-the-finals/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/experience/2013/09/10/at-the-finals/</guid>
         
         <category>security</category>
         
@@ -787,8 +787,8 @@ If you get an ERROR 403 while starting on port 80, it may be due to IIS that is 
 
 </description>
         <pubDate>Sun, 28 Jul 2013 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/technology/how-to/2013/07/28/install-webgoat/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/technology/how-to/2013/07/28/install-webgoat/</guid>
+        <link>http://0.0.0.0:4000/technology/how-to/2013/07/28/install-webgoat/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/technology/how-to/2013/07/28/install-webgoat/</guid>
         
         <category>webgoat</category>
         
@@ -846,8 +846,8 @@ in those).&lt;/p&gt;
 &lt;p&gt;Just excited in participating in the final round… :)&lt;/p&gt;
 </description>
         <pubDate>Sun, 21 Apr 2013 00:00:00 +0530</pubDate>
-        <link>http://abijith-kp.github.io/experience/2013/04/21/hacking-at-inctf/</link>
-        <guid isPermaLink="true">http://abijith-kp.github.io/experience/2013/04/21/hacking-at-inctf/</guid>
+        <link>http://0.0.0.0:4000/experience/2013/04/21/hacking-at-inctf/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/experience/2013/04/21/hacking-at-inctf/</guid>
         
         <category>security</category>
         

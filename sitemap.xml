@@ -1,81 +1,81 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://abijith-kp.github.io/technology/how-to/2013/01/13/fedora-login-page/</loc>
+        <loc>http://0.0.0.0:4000/technology/how-to/2013/01/13/fedora-login-page/</loc>
         <lastmod>2014-08-24T22:41:41+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/experience/2013/01/13/jack-of-all-master-of-none/</loc>
+        <loc>http://0.0.0.0:4000/experience/2013/01/13/jack-of-all-master-of-none/</loc>
         <lastmod>2014-08-24T22:41:41+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/technology/how-to/2013/03/20/lexyacc-in-arch-linux/</loc>
+        <loc>http://0.0.0.0:4000/technology/how-to/2013/03/20/lexyacc-in-arch-linux/</loc>
         <lastmod>2014-08-24T22:41:41+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/experience/2013/04/21/hacking-at-inctf/</loc>
+        <loc>http://0.0.0.0:4000/experience/2013/04/21/hacking-at-inctf/</loc>
         <lastmod>2014-08-24T22:41:41+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/technology/how-to/2013/07/28/install-webgoat/</loc>
+        <loc>http://0.0.0.0:4000/technology/how-to/2013/07/28/install-webgoat/</loc>
         <lastmod>2014-08-24T22:41:41+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/experience/2013/09/10/at-the-finals/</loc>
+        <loc>http://0.0.0.0:4000/experience/2013/09/10/at-the-finals/</loc>
+        <lastmod>2014-08-24T22:41:41+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://0.0.0.0:4000/technology/2014/01/24/what-is-buffer-overflow-attack/</loc>
+        <lastmod>2014-08-24T22:41:41+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://0.0.0.0:4000/technology/2014/06/06/buffer-overflow-attack/</loc>
         <lastmod>2014-08-24T22:41:41+05:30</lastmod>
     </url>
     <url>
         <loc>
-            http://abijith-kp.github.io/technology/2014/01/24/what-is-buffer-overflow-attack/
+            http://0.0.0.0:4000/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/
         </loc>
         <lastmod>2014-08-24T22:41:41+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/technology/2014/06/06/buffer-overflow-attack/</loc>
+        <loc>http://0.0.0.0:4000/video/education/2014/08/06/computer-education/</loc>
         <lastmod>2014-08-24T22:41:41+05:30</lastmod>
     </url>
     <url>
-        <loc>
-            http://abijith-kp.github.io/technology/python/how-to/2014/07/26/how-to-use-cython-compiler/
-        </loc>
+        <loc>http://0.0.0.0:4000/technology/how-to/2014/08/10/c-libraries---basics/</loc>
         <lastmod>2014-08-24T22:41:41+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/video/education/2014/08/06/computer-education/</loc>
-        <lastmod>2014-08-24T22:41:41+05:30</lastmod>
-    </url>
-    <url>
-        <loc>http://abijith-kp.github.io/technology/how-to/2014/08/10/c-libraries---basics/</loc>
-        <lastmod>2014-08-24T22:41:41+05:30</lastmod>
-    </url>
-    <url>
-        <loc>http://abijith-kp.github.io/2015/05/26/monty-hall-problem/</loc>
+        <loc>http://0.0.0.0:4000/2015/05/26/monty-hall-problem/</loc>
         <lastmod>2015-06-07T22:09:43+05:30</lastmod>
     </url>
     <url>
-        <loc>
-            http://abijith-kp.github.io/2015/09/20/emolytics---a-new-try-on-data-visualisation/
-        </loc>
+        <loc>http://0.0.0.0:4000/2015/09/20/emolytics---a-new-try-on-data-visualisation/</loc>
         <lastmod>2015-09-20T07:16:21+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/404.html</loc>
+        <loc>http://0.0.0.0:4000/404.html</loc>
         <lastmod>2014-08-26T14:56:49+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/about/</loc>
+        <loc>http://0.0.0.0:4000/about/</loc>
         <lastmod>2015-06-07T22:01:12+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/archive.html</loc>
+        <loc>http://0.0.0.0:4000/archive.html</loc>
         <lastmod>2015-09-20T07:16:21+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/</loc>
+        <loc>http://0.0.0.0:4000/bookmarks/</loc>
+        <lastmod>2016-01-06T02:17:06+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://0.0.0.0:4000/</loc>
         <lastmod>2014-08-24T22:13:23+05:30</lastmod>
     </url>
     <url>
-        <loc>http://abijith-kp.github.io/notes/</loc>
+        <loc>http://0.0.0.0:4000/notes/</loc>
         <lastmod>2014-08-24T22:22:56+05:30</lastmod>
     </url>
 </urlset>
