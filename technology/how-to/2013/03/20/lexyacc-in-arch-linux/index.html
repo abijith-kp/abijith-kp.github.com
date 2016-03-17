@@ -65,8 +65,6 @@
         
           
         
-          
-        
           <a class="page-link" href="/notes/">Notes</a>
         
       </div>
@@ -90,7 +88,7 @@
   <p>In our sixth semester of B-Tech we have a course on Compiler Design. For that two tools are being used: Lex which is a
 lexical analyzer and Yacc is a parser generator. While compiling the code for the lexical analyzer created by lex and the
 code for parse created by yacc we require few libraries to include some important function templates into the code. the
-flags used along with gcc for this purpose are <code>-ll</code> and  <code>-lfl</code>.</p>
+flags used along with gcc for this purpose are <code class="highlighter-rouge">-ll</code> and  <code class="highlighter-rouge">-lfl</code>.</p>
 
 <p>After installing Lex/Yacc in my Fedora system few months back, I got an error stating that definition for yywrap is not
 included. After searching for some time I got the solution for it.</p>
@@ -100,10 +98,10 @@ included. After searching for some time I got the solution for it.</p>
 <ul>
   <li>
     <p>Just include the function yywrap in the lex file in the function definition part(third part of the code).Compiling can be
-done as <code>gcc lex.yy.c y.tab.c</code></p>
+done as <code class="highlighter-rouge">gcc lex.yy.c y.tab.c</code></p>
   </li>
   <li>
-    <p>Install <strong>flex-static</strong> library to use the gcc flag -ll. After this just compile it like <code>gcc lex.yy.c y.tab.c -ll</code></p>
+    <p>Install <strong>flex-static</strong> library to use the gcc flag -ll. After this just compile it like <code class="highlighter-rouge">gcc lex.yy.c y.tab.c -ll</code></p>
   </li>
 </ul>
 

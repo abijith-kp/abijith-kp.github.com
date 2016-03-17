@@ -65,8 +65,6 @@
         
           
         
-          
-        
           <a class="page-link" href="/notes/">Notes</a>
         
       </div>
@@ -91,10 +89,10 @@
 <div class="posts">
   
   <li>
-    <a class="post-link" id=aadvicetomyself href="#">An advice to myself</a></br>
-    <span id=p_advicetomyself class="unhidden_p"> Part of a conversation between Ernest Rutherford and his student </span>
+    <a class="post-link" id=a/micro_posts/advice_to_myself href="#">An advice to myself</a></br>
+    <span id=p_/micro_posts/advice_to_myself class="unhidden_p"> Part of a conversation between Ernest Rutherford and his student </span>
 
-    <div id=advicetomyself class="hidden">
+    <div id=/micro_posts/advice_to_myself class="hidden">
       <article class="post-content">
         <p>One of the student in <a href="http://en.wikipedia.org/wiki/Ernest_Rutherford">Rutherford</a>’s
 class was very hard working. Rutherford had noticed it and asked one evening:</p>
@@ -108,9 +106,9 @@ class was very hard working. Rutherford had noticed it and asked one evening:</p
       </article>
     </div>
     <script>
-      $( "#aadvicetomyself" ).click(function() {
-        $( "#p_advicetomyself" ).slideToggle( "slow" );
-        $( "#advicetomyself" ).slideToggle( "slow" );
+      $( "#a/micro_posts/advice_to_myself" ).click(function() {
+        $( "#p_/micro_posts/advice_to_myself" ).slideToggle( "slow" );
+        $( "#/micro_posts/advice_to_myself" ).slideToggle( "slow" );
         });
     </script>
 
@@ -118,13 +116,13 @@ class was very hard working. Rutherford had noticed it and asked one evening:</p
 
   
   <li>
-    <a class="post-link" id=abashtip1 href="#">Bash Tip - 1</a></br>
-    <span id=p_bashtip1 class="unhidden_p"> Easily repeat a character N times without writing it </span>
+    <a class="post-link" id=a/micro_posts/bash_tip1 href="#">Bash Tip - 1</a></br>
+    <span id=p_/micro_posts/bash_tip1 class="unhidden_p"> Easily repeat a character N times without writing it </span>
 
-    <div id=bashtip1 class="hidden">
+    <div id=/micro_posts/bash_tip1 class="hidden">
       <article class="post-content">
         <p>If you want to repeat a character N times on a bash shell, say for example your
-variable name is <code>aaaaa</code>; Then a simple way to do it is not writting it
+variable name is <code class="highlighter-rouge">aaaaa</code>; Then a simple way to do it is not writting it
 repeatedly 5, do this:</p>
 
 <p>Initial Prompt: me@me $</p>
@@ -142,9 +140,9 @@ Ex      : (arg: 5) a ==&gt; me@me $ aaaaa</char_to_repeat></char_to_repeat></cha
       </article>
     </div>
     <script>
-      $( "#abashtip1" ).click(function() {
-        $( "#p_bashtip1" ).slideToggle( "slow" );
-        $( "#bashtip1" ).slideToggle( "slow" );
+      $( "#a/micro_posts/bash_tip1" ).click(function() {
+        $( "#p_/micro_posts/bash_tip1" ).slideToggle( "slow" );
+        $( "#/micro_posts/bash_tip1" ).slideToggle( "slow" );
         });
     </script>
 
@@ -152,10 +150,10 @@ Ex      : (arg: 5) a ==&gt; me@me $ aaaaa</char_to_repeat></char_to_repeat></cha
 
   
   <li>
-    <a class="post-link" id=acodinganddebuging href="#">Coding and Debuging</a></br>
-    <span id=p_codinganddebuging class="unhidden_p"> Quote from The Elements of Programming Style </span>
+    <a class="post-link" id=a/micro_posts/kernighan href="#">Coding and Debuging</a></br>
+    <span id=p_/micro_posts/kernighan class="unhidden_p"> Quote from The Elements of Programming Style </span>
 
-    <div id=codinganddebuging class="hidden">
+    <div id=/micro_posts/kernighan class="hidden">
       <article class="post-content">
         <p><strong>Brian Kernighan</strong> famously wrote:</p>
 
@@ -168,9 +166,9 @@ debug it?</p>
       </article>
     </div>
     <script>
-      $( "#acodinganddebuging" ).click(function() {
-        $( "#p_codinganddebuging" ).slideToggle( "slow" );
-        $( "#codinganddebuging" ).slideToggle( "slow" );
+      $( "#a/micro_posts/kernighan" ).click(function() {
+        $( "#p_/micro_posts/kernighan" ).slideToggle( "slow" );
+        $( "#/micro_posts/kernighan" ).slideToggle( "slow" );
         });
     </script>
 
@@ -178,48 +176,48 @@ debug it?</p>
 
   
   <li>
-    <a class="post-link" id=avimtip1 href="#">Vim Tip - 1</a></br>
-    <span id=p_vimtip1 class="unhidden_p"> How to shift block of code in VIM </span>
+    <a class="post-link" id=a/micro_posts/vim_tip_1 href="#">Vim Tip - 1</a></br>
+    <span id=p_/micro_posts/vim_tip_1 class="unhidden_p"> How to shift block of code in VIM </span>
 
-    <div id=vimtip1 class="hidden">
+    <div id=/micro_posts/vim_tip_1 class="hidden">
       <article class="post-content">
         <p>To shift a block of text left or right:</p>
 
 <p>Initial text:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">1| Vim is a text editor written by Bram
+<figure class="highlight"><pre><code class="language-text" data-lang="text">1| Vim is a text editor written by Bram
 2| Moolenaar and first released publicly in 1991. Based on the ideas of the vi
 3| editor common to Unix-like systems, Vim is designed for use both from a command
 4| line interface and as a standalone application in a graphical user interface.
 5| Vim is free and open source software and is released under a license that
 6| includes some charityware clauses, encouraging users who enjoy the software to
 7| consider donating to children in Uganda.[4] The license is compatible with the
-8| GNU General Public License.</code></pre></div>
+8| GNU General Public License.</code></pre></figure>
 
 <p>To shift the block of text from line 3 to 6 two tab length to right:<br />
-<code>:3,5&gt;&gt;</code></p>
+<code class="highlighter-rouge">:3,5&gt;&gt;</code></p>
 
 <p>Shifting lines 5 and 6 to right, one tab length:<br />
-<code>:5,6&lt;</code></p>
+<code class="highlighter-rouge">:5,6&lt;</code></p>
 
 <p>Final text:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">1| Vim is a text editor written by Bram
+<figure class="highlight"><pre><code class="language-text" data-lang="text">1| Vim is a text editor written by Bram
 2| Moolenaar and first released publicly in 1991. Based on the ideas of the vi
 3|          editor common to Unix-like systems, Vim is designed for use both from a command
 4|          line interface and as a standalone application in a graphical user interface.
 5|      Vim is free and open source software and is released under a license that
 6|      includes some charityware clauses, encouraging users who enjoy the software to
 7| consider donating to children in Uganda.[4] The license is compatible with the
-8| GNU General Public License.</code></pre></div>
+8| GNU General Public License.</code></pre></figure>
 
 
       </article>
     </div>
     <script>
-      $( "#avimtip1" ).click(function() {
-        $( "#p_vimtip1" ).slideToggle( "slow" );
-        $( "#vimtip1" ).slideToggle( "slow" );
+      $( "#a/micro_posts/vim_tip_1" ).click(function() {
+        $( "#p_/micro_posts/vim_tip_1" ).slideToggle( "slow" );
+        $( "#/micro_posts/vim_tip_1" ).slideToggle( "slow" );
         });
     </script>
 

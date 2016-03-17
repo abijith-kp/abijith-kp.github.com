@@ -65,8 +65,6 @@
         
           
         
-          
-        
           <a class="page-link" href="/notes/">Notes</a>
         
       </div>
@@ -95,37 +93,37 @@ So I thought I could share my experience if it could help someone to install Web
 
 <p>I downloaded WebGoat v5.2 from <a href="http://sourceforge.net/projects/owasp/files/WebGoat/WebGoat%205.2/">Sourceforge</a>. Along
 with the WebGoat-OWASP_Standard-5.2.zip, we also require WebGoat-5.2.war file. Unzip the WebGoat zip file to your curent
-directory.Change into the new unzipped directory. Then remove all the files name webgoat in <code>./tomcat/webapp/</code> and place
+directory.Change into the new unzipped directory. Then remove all the files name webgoat in <code class="highlighter-rouge">./tomcat/webapp/</code> and place
 the downloaded war file in this directory.</p>
 
-<p>Find out the versions of jre and jdk installed in your system using:  <code>java  -version</code></p>
+<p>Find out the versions of jre and jdk installed in your system using:  <code class="highlighter-rouge">java  -version</code></p>
 
-<p>Also find the vakue for the environmental value JAVA_HOME:  <code>echo $JAVA_HOME</code></p>
+<p>Also find the vakue for the environmental value JAVA_HOME:  <code class="highlighter-rouge">echo $JAVA_HOME</code></p>
 
-<p>Open the webgoat.sh file from the root folder. In the function <code>is_java_1dot6</code> change all the <code>1.6</code> to the your current
+<p>Open the webgoat.sh file from the root folder. In the function <code class="highlighter-rouge">is_java_1dot6</code> change all the <code class="highlighter-rouge">1.6</code> to the your current
 version.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>java -version
-java version <span class="s2">&quot;1.7.0_21&quot;</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -version
+java version <span class="s2">"1.7.0_21"</span>
 OpenJDK Runtime Environment <span class="o">(</span>IcedTea 2.3.9<span class="o">)</span> <span class="o">(</span>ArchLinux build 7.u21_2.3.9-4-x86_64<span class="o">)</span>
 OpenJDK 64-Bit Server VM <span class="o">(</span>build 23.7-b01, mixed mode<span class="o">)</span>
 
-<span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$JAVA_HOME</span>
-/usr/lib/jvm/java-7-openjdk</code></pre></div>
+<span class="gp">$ </span><span class="nb">echo</span> <span class="nv">$JAVA_HOME</span>
+/usr/lib/jvm/java-7-openjdk</code></pre></figure>
 
 <p>Here java version is shown as 1.7.0_21. Therefore you can replace the older version number given in the shell script to the
-new version number <code>1.7</code>.You have to add below given two lines to the shell script:</p>
+new version number <code class="highlighter-rouge">1.7</code>.You have to add below given two lines to the shell script:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/java-7-openjdk
-<span class="nb">export</span>  JAVA_HOME</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/java-7-openjdk
+<span class="nb">export</span>  JAVA_HOME</code></pre></figure>
 
 <p>Now start the tomcat server.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sh webgoat.sh start80      # works on default port of 80</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sh webgoat.sh start80      # works on default port of 80</code></pre></figure>
 
 <p>OR</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sh webgoat.sh start8080    <span class="c"># works on port 8080</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sh webgoat.sh start8080    <span class="c"># works on port 8080</span></code></pre></figure>
 
 <p>Go to http://127.0.0.1/webgoat/attack OR http://127.0.0.1:8080/webgoat/attack in any browser to start using WebGoat interface.
 If you get an ERROR 403 while starting on port 80, it may be due to IIS that is using that port.</p>

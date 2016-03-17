@@ -65,8 +65,6 @@
         
           
         
-          
-        
           <a class="page-link" href="/notes/">Notes</a>
         
       </div>
@@ -109,13 +107,13 @@ Refer to the description given for more information.</p>
 <p>For working with Cython initially we have to convert the python/Cython code into C language. It can be done using
 the Cython compiler.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>cython --embed sample.py</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>cython --embed sample.py</code></pre></figure>
 
 <p>Output will be a C source file named sample.c</p>
 
 <p><strong>NOTE</strong>:</p>
 
-<p>If the option <code>--embed[=&lt;method_name&gt;]</code> is not given along with cython command, a main function is not included in
+<p>If the option <code class="highlighter-rouge">--embed[=&lt;method_name&gt;]</code> is not given along with cython command, a main function is not included in
 the resulting code</p>
 
 <p>After the compilation step, we have two ways to proceed:</p>
@@ -131,7 +129,7 @@ the resulting code</p>
 
 <h2 id="make-a-module">Make a module</h2>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gcc -shared -fPIC -Os -I /usr/include/python2.7 -o sample.so sample.c</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>gcc -shared -fPIC -Os -I /usr/include/python2.7 -o sample.so sample.c</code></pre></figure>
 
 <p>Note the use of .so extension for the output shared library. The file sample.so can be imported as a regular
 python module by the name sample. If a python program by the same name is present in the same directory, then
@@ -150,7 +148,7 @@ Recorded running time for module imported from shared library:</p>
 
 <h2 id="make-an-executable">Make an executable</h2>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gcc -I /usr/include/python2.7 -o sample sample.c -lpython2.7</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>gcc -I /usr/include/python2.7 -o sample sample.c -lpython2.7</code></pre></figure>
 
 <p>This is just a regular gcc compilation with the header file location mentioned using -I flag.</p>
 
@@ -208,7 +206,7 @@ Recorded running time for module imported from shared library:</p>
 
 <p>All the library dependency can be seen using ldd command</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>ldd sample
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ldd sample
   linux-vdso.so.1 <span class="o">(</span>0x00007fff95ffe000<span class="o">)</span>
   libpython2.7.so.1.0 <span class="o">=</span>&gt; /usr/lib/libpython2.7.so.1.0 <span class="o">(</span>0x00007f64805e4000<span class="o">)</span>
   libpthread.so.0 <span class="o">=</span>&gt; /usr/lib/libpthread.so.0 <span class="o">(</span>0x00007f64803c6000<span class="o">)</span>
@@ -216,7 +214,7 @@ Recorded running time for module imported from shared library:</p>
   libutil.so.1 <span class="o">=</span>&gt; /usr/lib/libutil.so.1 <span class="o">(</span>0x00007f647febf000<span class="o">)</span>
   libdl.so.2 <span class="o">=</span>&gt; /usr/lib/libdl.so.2 <span class="o">(</span>0x00007f647febf000007f647fcbb000<span class="o">)</span>
   libc.so.6 <span class="o">=</span>&gt; /usr/lib/libc.so.6 <span class="o">(</span>0x00007f647f90d000<span class="o">)</span>
-  /lib64/ld-linux-x86-64.so.2 <span class="o">(</span>0x00007f64809ad000<span class="o">)</span></code></pre></div>
+  /lib64/ld-linux-x86-64.so.2 <span class="o">(</span>0x00007f64809ad000<span class="o">)</span></code></pre></figure>
 
 <h2 id="faq">FAQ:</h2>
 <p><em>Quest</em>: Why do I get this import error? “ImportError: ./sample.so: cannot dynamically load executable” <br />

@@ -65,8 +65,6 @@
         
           
         
-          
-        
           <a class="page-link" href="/notes/">Notes</a>
         
       </div>
@@ -97,24 +95,24 @@ i have found the way…</p>
 will be requiring the root access to copy to the final destination.There could be a problem with ownership of the file after
 you copy it. So change both the group and user of the image as gdm.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo cp  /from/required/path/image.jpg  /var/lib/gdm/</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo cp  /from/required/path/image.jpg  /var/lib/gdm/</code></pre></figure>
 
 <p>next change the ownership of the file</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo chown gdm:gdm /var/lib/gdm/image.jpg</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo chown gdm:gdm /var/lib/gdm/image.jpg</code></pre></figure>
 
 <p>Next you have to add the user “gdm” to the list of all users who can access the X Server of your system. For that you can:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">xhost +SI:localuser:gdm</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">xhost +SI:localuser:gdm</code></pre></figure>
 
 <p>Then start the gnome control center to cahnge the background as gdm as the user.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo -u gdm dbus-launch gnome-control-center</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo -u gdm dbus-launch gnome-control-center</code></pre></figure>
 
 <p>Select the background option. Then select the image from the home folder of the user gdm. Close the gnome-control-center.
 Then remove gdm from the users list who can access the X Server. You can use the following command for that:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">xhost -SI:localuser:gdm</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">xhost -SI:localuser:gdm</code></pre></figure>
 
 <p>Now just logout from your account and see that the background image has changed…. :)</p>
 
