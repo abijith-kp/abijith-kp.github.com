@@ -106,6 +106,25 @@ only meant as a hobby project.</p>
 
 <p>Note 2: I’ll update this post soon.</p>
 
+<h4 id="update">UPDATE</h4>
+
+<p>I had restarted working on this earlier last week. My first aim to make it into
+a webapp. Since before I had a little exposure and since this will only be a
+small application I preffered using Flask for development. In the intial phase
+of development, I kept all the other components as such and just ported the UI
+from matplotlib to flask platform.</p>
+
+<p>Later I decided to move from using regular threading to redis queues for job
+processing tasks. Instead of working directly with mongodb wrappers, this time I
+went with using SQLAlchemy and Sqlite DB. While using PyMongo(python wrapper for
+mongodb), there were many things that was to be done manually. But when using
+SQLAlchemy all the database migrations and all are handled by the module. All
+the models were were defined and the base class used was “Model” from SQLAlchemy
+module. This will help in migrating all the model classes to database tables.</p>
+
+<p>I am planning on writting a more detailed post on how Emolytics works. I guess
+writting that post will also help me in reviewing what I have done till date.</p>
+
 
   </article>
 
