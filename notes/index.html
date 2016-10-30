@@ -252,6 +252,48 @@ debug it?</p>
   </li>
 
   
+  <li>
+    <a class="post-link" id=avirtualenv1 href="#">Virtualenv</a></br>
+    <span id=p_virtualenv1 class="unhidden_p"> Issues with relocating virtualenv to a different path </span>
+
+    <div id=virtualenv1 class="hidden">
+      <article class="post-content">
+        <p>Straight forward method to relocate virtualenv folder to a different
+directory from the <a href="https://virtualenv.pypa.io/en/stable/userguide/#making-environments-relocatable">documentation</a></p>
+
+<p>It does not work in all situation as per what we can see in the <a href="https://github.com/pypa/virtualenv/issues/90">Github
+issues</a>
+and it is also mentioned in their documentation itself that, this
+feature may be removed in future releases.</p>
+
+<p>But I had this problem that I was not able use pip to get the packages installed
+through <code class="highlighter-rouge">pip freeze</code>. It says that the python executable path was wrong as it pointed
+to the old path.</p>
+
+<p>I got the code below from <a href="http://stackoverflow.com/questions/15961926/how-can-i-make-a-list-of-installed-packages-in-a-certain-virtualenv">SO</a>
+Got to run the below code after activating the virutalenv(<code class="highlighter-rouge">source old-venv/bin/activate</code>)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pip</span> <span class="c">#needed to use the pip functions</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pip</span><span class="o">.</span><span class="n">get_installed_distributions</span><span class="p">(</span><span class="n">local_only</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>This actually helped me in getting the list of packages without directly using
+pip.</p>
+
+      </article>
+    </div>
+    <script>
+      $( "#avirtualenv1" ).click(function() {
+        $( "#p_virtualenv1" ).slideToggle( "slow" );
+        $( "#virtualenv1" ).slideToggle( "slow" );
+        });
+    </script>
+
+  </li>
+
+  
 
 </div>
 
