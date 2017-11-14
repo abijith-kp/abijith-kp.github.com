@@ -97,7 +97,7 @@ myself for any future activities.</p>
     <h4 id="create-setuppy">Create setup.py</h4>
   </li>
   <li>
-    <h4 id="create-account-in-pypihttpspypipythonorg-website">Create account in <a href="https://pypi.python.org/">PyPi</a> website</h4>
+    <h4 id="create-account-in-pypi-website">Create account in <a href="https://pypi.python.org/">PyPi</a> website</h4>
   </li>
   <li>
     <h4 id="create-pypirc-file">Create ~/.pypirc file</h4>
@@ -107,7 +107,7 @@ myself for any future activities.</p>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>python setup.py register -r testpypitest
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>python setup.py register -r testpypitest
 </code></pre>
 </div>
 
@@ -117,7 +117,7 @@ myself for any future activities.</p>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>python setup.py bdist upload -r testpypitest
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>python setup.py bdist upload -r testpypitest
 </code></pre>
 </div>
 
@@ -133,7 +133,7 @@ myself for any future activities.</p>
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s">'hello'</span><span class="p">,</span>
@@ -176,7 +176,7 @@ entry_points        : This gives a maping of the exe name to the funtion inside 
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s">'test_package'</span><span class="p">,</span>
@@ -214,7 +214,7 @@ password = &lt;password&gt;
 <p>Once we have all pre-requisite setup done, now we’ll go forward to registering
 and uploading the package to TestPyPi site.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">register</span> <span class="o">-</span><span class="n">r</span> <span class="n">testpypitest</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">register</span> <span class="o">-</span><span class="n">r</span> <span class="n">testpypitest</span>
 <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">bdist</span> <span class="n">upload</span> <span class="o">-</span><span class="n">r</span> <span class="n">testpypitest</span>
 </code></pre>
 </div>
@@ -224,7 +224,7 @@ package(option: upload) are not used in a chaining way it could result the error
 as given below. So we will chain the commands and create the binary distribution
 and upload it:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>abijith@abijithkp home]<span class="nv">$ </span>python setup.py upload -r pypitest
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>abijith@abijithkp home]<span class="nv">$ </span>python setup.py upload -r pypitest
 running upload
 error: No dist file created <span class="k">in </span>earlier <span class="nb">command</span>
 </code></pre>

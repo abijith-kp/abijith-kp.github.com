@@ -98,7 +98,7 @@ goes on; I have no plans to elaborate on these things now. One main thing that I
 oversaw was the format in which angluar takes in the expression to evaluate from
 an HTML page(view).</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-bind=</span><span class="s">"{{ some-variable }}"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-bind=</span><span class="s">"{{ some-variable }}"</span><span class="nt">&gt;&lt;/div&gt;</span>
 </code></pre>
 </div>
 
@@ -118,7 +118,7 @@ reference:</p>
   <li>Use ng-view to insert another web page content into the one rendered by flask</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-view</span><span class="nt">&gt;&lt;/div&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-view</span><span class="nt">&gt;&lt;/div&gt;</span>
 </code></pre>
 </div>
 
@@ -133,7 +133,7 @@ starting and ending templatng tags to something else</p>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">myModule</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$interpolateProvider</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">myModule</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$interpolateProvider</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">$interpolateProvider</span><span class="p">.</span><span class="nx">startSymbol</span><span class="p">(</span><span class="s1">'[['</span><span class="p">);</span>
     <span class="nx">$interpolateProvider</span><span class="p">.</span><span class="nx">endSymbol</span><span class="p">(</span><span class="s1">']]'</span><span class="p">);</span>
     <span class="p">});</span>
@@ -146,7 +146,7 @@ starting and ending templatng tags to something else</p>
 inside each <code class="highlighter-rouge">&lt;li&gt; &lt;/li&gt;</code>tags. \
 Say the sample code is given below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- Something here --&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- Something here --&gt;</span>
 <span class="nt">&lt;ul&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">"k in dict-of-keys"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal fade"</span> <span class="na">id=</span><span class="s">"k-edit"</span> <span class="na">role=</span><span class="s">"dialog"</span><span class="nt">&gt;</span>
@@ -170,7 +170,7 @@ iteration of ng-repeat and then this model/content gets propagated throughout
 rest of the list entries. i.e. Here we have to uniquely identify the model div
 for each <code class="highlighter-rouge">&lt;li&gt;</code> tag.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- Something here --&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- Something here --&gt;</span>
 <span class="nt">&lt;ul&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">"k in dict-of-keys"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal fade"</span> <span class="na">id=</span><span class="s">"k-edit-{{ k }}"</span> <span class="na">role=</span><span class="s">"dialog"</span><span class="nt">&gt;</span>

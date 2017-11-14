@@ -309,7 +309,7 @@ to the old path.</p>
 <p>I got the code below from <a href="http://stackoverflow.com/questions/12939975/how-to-list-all-installed-packages-and-their-versions-in-python">SO</a>
 Got to run the below code after activating the virutalenv(<code class="highlighter-rouge">source old-venv/bin/activate</code>)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pip</span> <span class="c">#needed to use the pip functions</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pip</span> <span class="c">#needed to use the pip functions</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pip</span><span class="o">.</span><span class="n">get_installed_distributions</span><span class="p">(</span><span class="n">local_only</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </code></pre>
