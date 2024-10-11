@@ -1,0 +1,28 @@
+entries:
+  - title: info
+    entries:
+      - title: software engineer
+      - title: github
+        url: https://github.com/abijith-kp
+      - title: linkedin
+        url: https://www.linkedin.com/in/abijithkp/
+
+  - title: all posts
+    post_list:
+      limit: 5
+      category: new_blog
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: archive.html
+
+  - title: bookmarks
+    url: bookmarks.html
+
+  - title: awesome list of from-scratch projects
+    url: challenges.html
+
+  - title: rss
+    url: feed.xml
+
+  - title: "content from old blog"
+    url: archive_old_blog.html
