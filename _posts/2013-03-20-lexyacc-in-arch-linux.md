@@ -3,7 +3,7 @@ layout: post
 title: "Lex/YACC in Arch Linux"
 title_id: "Setup Lex/YACC in Arch Linux in Fedora"
 description: ""
-categories: [technology, how-to]
+categories: [technology, how-to, old_blog]
 tags: [flex, arch linux, compiler, lex, flex static, fedora]
 ---
 

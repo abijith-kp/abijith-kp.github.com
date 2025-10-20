@@ -3,7 +3,7 @@ layout: post
 title: "C Libraries - Basics"
 title_id: "How to create and add C library"
 description: ""
-categories: [technology, how-to]
+categories: [technology, how-to, old_blog]
 tags: [C, library, gcc, learning, create, beginner, intermediate]
 ---
 

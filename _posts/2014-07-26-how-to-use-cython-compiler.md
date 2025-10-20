@@ -3,7 +3,7 @@ layout: post
 title: "How to use Cython compiler??"
 title_id: "Introduction: Use cython to make python modules"
 description: ""
-categories: [technology, python, how-to]
+categories: [technology, python, how-to, old_blog]
 tags: [python, cython, compiler, optimize, c, languages]
 ---
 

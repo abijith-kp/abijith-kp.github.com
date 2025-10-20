@@ -3,7 +3,7 @@ layout: post
 title: "Computer Education"
 title_id: "Everyone should learn programming in High School"
 description: ""
-categories: [video, education]
+categories: [video, education, old_blog]
 tags: [experiments, learning, inspiration]
 ---
 

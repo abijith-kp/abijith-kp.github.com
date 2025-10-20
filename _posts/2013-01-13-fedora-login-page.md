@@ -3,7 +3,7 @@ layout: post
 title: "Fedora login page"
 title_id: "Add image to login page for GDM in Fedora"
 description: ""
-categories: [technology, how-to]
+categories: [technology, how-to, old_blog]
 tags: [fedora, login, linux, gdm, background, x-server]
 ---
 

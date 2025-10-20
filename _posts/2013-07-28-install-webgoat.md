@@ -3,7 +3,7 @@ layout: post
 title: "Install WebGoat"
 title_id: "How to install Webgoat in Arch Linux"
 description: ""
-categories: [technology, how-to]
+categories: [technology, how-to, old_blog]
 tags: [webgoat, java, arch linux, installation, owasp]
 ---
 
